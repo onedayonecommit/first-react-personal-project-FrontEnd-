@@ -1,14 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const AgeSlice = createSlice({
-    name: "ages",
-    initialState: { value: 0 },
+    name: "ageslice",
+    initialState: { value: 10 },
     reducers: {
-        ageup: (state, payload) => {
-            state.value = state.value + payload
+        ageup: (state, action) => {
+            state.value = state.value + action.payload
         },
-        agedown: (state, payload) => {
-            state.value = state.value - payload
+        agedown: (state, action) => {
+            state.value = state.value - action.payload
         }
     }
 })
+
+export default AgeSlice
+export const { ageup, agedown } = AgeSlice.actions

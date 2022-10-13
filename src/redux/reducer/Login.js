@@ -12,6 +12,5 @@ const CounterSlice = createSlice({
         }
     }
 })
-
 export default CounterSlice;
 export const { up, down } = CounterSlice.actions
