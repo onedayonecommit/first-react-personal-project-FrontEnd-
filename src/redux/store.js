@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import AgeSlice from "./reducer/Age";
-import CounterSlice from "./reducer/Login";
+import { getAT, LoginSlice } from "./reducer/Login";
+import { SignupSlice } from "./reducer/Signup";
 
 const Store = configureStore({
     reducer: {
-        counter: CounterSlice.reducer,
-        age: AgeSlice.reducer
+        // loginAT: LoginSlice.actions,
+        // signUp: SignupSlice.actions
     }
 })
 

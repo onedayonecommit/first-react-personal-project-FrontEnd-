@@ -18,7 +18,7 @@ const Nav = () => {
 
 
                 <div className='flex'>
-                    <button class="peer px-4 py-2 bg-red-300 hover:bg-red-400 text-white rounded ">공지사항/게시판</button>
+                    <button class="peer px-4 py-2 bg-red-500 hover:bg-red-500 text-white rounded ">공지사항/게시판</button>
 
                     <div class="hidden peer-hover:flex hover:flex
          w-[200px]
