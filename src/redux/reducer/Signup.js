@@ -1,6 +1,8 @@
 import axios from "axios";
+import { useDispatch } from "react-redux";
 
 const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
+
 
 const SignupFetch = createAsyncThunk("SignupSlice/SignupFetch", async (state) => {
     console.log(state)
@@ -24,7 +26,10 @@ const SignupIdFetch = createAsyncThunk("SignupSlice/SignupIdFetch", async (state
     }).catch((error) => {
         console.log(error)
     })
-    return alert(idCheckResult)
+    if (idCheckResult == "이미 사용중인 아이디 입니다.") return alert(idCheckResult)
+    else if (idCheckResult == "사용 가능합니다.") {
+        return alert(idCheckResult)
+    }
 })
 
 const SignupIdCheckSlice = createSlice({
@@ -32,7 +37,10 @@ const SignupIdCheckSlice = createSlice({
     initialState: {
         useid: ""
     }, reducers: {
-
+        idSuc: (state, action) => {
+            state.useid = action.payload
+            console.log(state)
+        }
     }
 })
 
@@ -63,5 +71,6 @@ const SignupSlice = createSlice({
     }
 })
 
-export { SignupSlice, SignupFetch, SignupIdFetch }
+export { SignupSlice, SignupFetch, SignupIdFetch, SignupIdCheckSlice }
 export const { signup } = SignupSlice.actions
+export const { idSuc } = SignupIdCheckSlice.actions

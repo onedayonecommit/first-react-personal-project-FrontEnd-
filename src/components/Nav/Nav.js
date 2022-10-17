@@ -4,7 +4,7 @@ import css from './Nav.css'
 const Nav = () => {
     return (
         <div>
-            <nav class="nav-bar flex justify-between items-center pl-14 pr-20 bg-gray-200">
+            <nav className="nav-bar flex justify-between items-center pl-14 pr-20 bg-gray-200">
                 <div className='flex'><Link to='/'>
                     <img src={require("../../image/영화.png")} className="w-16 h-16" />
                 </Link>
@@ -18,13 +18,13 @@ const Nav = () => {
 
 
                 <div className='flex'>
-                    <button class="peer px-4 py-2 bg-red-500 hover:bg-red-500 text-white rounded ">공지사항/게시판</button>
+                    <button className="peer px-4 py-2 bg-red-500 hover:bg-red-500 text-white rounded ">공지사항/게시판</button>
 
-                    <div class="hidden peer-hover:flex hover:flex
+                    <div className="hidden peer-hover:flex hover:flex
          w-[200px]
          flex-col bg-white drop-shadow-lg">
-                        <a class=" hover:bg-gray-200" href="#">공지사항</a>
-                        <a class=" hover:bg-gray-200" href="#">자유 게시판</a>
+                        <Link to="/#" className=" hover:bg-gray-200">공지사항</Link>
+                        <Link to="/#" className=" hover:bg-gray-200">자유 게시판</Link>
                     </div>
                 </div>
 
