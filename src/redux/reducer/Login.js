@@ -1,20 +1,19 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
-import { Login } from "../../page";
+import { createSlice } from "@reduxjs/toolkit";
+// import axios from "axios";
 
-const getAT = createAsyncThunk("GET/AT", async (dispatch, getState) => {
-    const result = await axios({
-        method: "post",
-        url: "http://localhost:8080/login",
-        data: {
-            user_id: "",
-            user_pw: "",
-        }
-    })
-    if (result.data) {
-        dispatch(login((result.refreshtoken)))
-    }
-});
+// const getAT = createAsyncThunk("GET/AT", async (dispatch, getState) => {
+//     const result = await axios({
+//         method: "post",
+//         url: "http://localhost:8080/login",
+//         data: {
+//             user_id: "",
+//             user_pw: "",
+//         }
+//     })
+//     if (result.data) {
+//         dispatch(login((result.refreshtoken)))
+//     }
+// });
 
 const LoginSlice = createSlice({
     name: "Login",
@@ -26,7 +25,10 @@ const LoginSlice = createSlice({
         logout: (state) => {
             state.value = ""
         }
+    },
+    extraReducers: (builder) => {
+
     }
 })
-export { getAT, LoginSlice }
+export { LoginSlice }
 export const { login, logout } = LoginSlice.actions
