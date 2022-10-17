@@ -6,7 +6,8 @@ const Login = () => {
     const [values, setValues] = useState();
     const dispatch = useDispatch()
     const idCheck = () => {
-        console.log(dispatch(SignupIdFetch(values.IdInput)))
+        console.log("HIi")
+        dispatch(SignupIdFetch(values))
     }
     const onChangeId = (e) => {
         setValues({

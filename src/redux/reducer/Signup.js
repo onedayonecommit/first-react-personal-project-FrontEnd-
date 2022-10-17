@@ -19,8 +19,21 @@ const SignupIdFetch = createAsyncThunk("SignupSlice/SignupIdFetch", async (state
         method: "post",
         url: "http://localhost:8080/idcheck",
         data: state
+    }).then((e) => {
+        return e.data
+    }).catch((error) => {
+        console.log(error)
     })
-    return idCheckResult
+    return alert(idCheckResult)
+})
+
+const SignupIdCheckSlice = createSlice({
+    name: "idCheck",
+    initialState: {
+        useid: ""
+    }, reducers: {
+
+    }
 })
 
 const SignupSlice = createSlice({
