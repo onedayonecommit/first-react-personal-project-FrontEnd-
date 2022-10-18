@@ -1,46 +1,31 @@
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import { SignupFetch, SignupIdFetch } from "../middlewares/Signup";
 
 const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 
 
-const SignupFetch = createAsyncThunk("SignupSlice/SignupFetch", async (state) => {
-    console.log(state)
-    const signupResult = await axios({
-        method: "post",
-        url: "http://localhost:8080/signup",
-        data: { user_id: state }
-    })
-    console.log(signupResult)
-    return signupResult
-})
-
-const SignupIdFetch = createAsyncThunk("SignupSlice/SignupIdFetch", async (state) => {
-    console.log(state)
-    const idCheckResult = await axios({
-        method: "post",
-        url: "http://localhost:8080/idcheck",
-        data: state
-    }).then((e) => {
-        return e.data
-    }).catch((error) => {
-        console.log(error)
-    })
-    if (idCheckResult == "이미 사용중인 아이디 입니다.") return alert(idCheckResult)
-    else if (idCheckResult == "사용 가능합니다.") {
-        return alert(idCheckResult)
-    }
-})
-
 const SignupIdCheckSlice = createSlice({
     name: "idCheck",
     initialState: {
-        useid: ""
+        useid: "",
+        using: false,
+        idCheckStatus: "서버 상태 좋음"
     }, reducers: {
         idSuc: (state, action) => {
             state.useid = action.payload
             console.log(state)
         }
+    }, extraReducers: (builder) => {
+        builder.addCase(SignupIdFetch.pending, (state, action) => {
+            state.idCheckStatus = "ID duplicate check in progress. please wait for a moment."
+        })
+        builder.addCase(SignupIdFetch.fulfilled, (state, action) => {
+            state.idCheckStatus = "Duplicate check completed. Please check the result."
+        })
+        builder.addCase(SignupIdFetch.rejected, (state, action) => {
+            state.idCheckStatus = "Sorry, it was rejected due to a temporary error, please try again"
+        })
     }
 })
 
@@ -48,7 +33,7 @@ const SignupSlice = createSlice({
     name: "Signup",
     initialState: {
         value: 0,
-        status: "Welcome to poo_bin Movie"
+        signUpStatus: "Welcome to poo_bin Movie"
     },
     reducers: {
         signup: (state, action) => {
@@ -71,6 +56,6 @@ const SignupSlice = createSlice({
     }
 })
 
-export { SignupSlice, SignupFetch, SignupIdFetch, SignupIdCheckSlice }
+export { SignupSlice, SignupIdCheckSlice }
 export const { signup } = SignupSlice.actions
 export const { idSuc } = SignupIdCheckSlice.actions
