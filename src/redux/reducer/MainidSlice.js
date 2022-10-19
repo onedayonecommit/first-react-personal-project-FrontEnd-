@@ -6,8 +6,8 @@ const MainIdCheckSlice = createSlice({
     initialState: { status: 0 },
     reducers: {
         checking: (state, action) => {
+            console.log(action.payload)
             state.status = action.payload
-            console.log(state)
         }
     },
     extraReducers: (builder) => {
@@ -16,7 +16,6 @@ const MainIdCheckSlice = createSlice({
         })
         builder.addCase(MainIdCheckFetch.fulfilled, (state, action) => {
             state.status = action.payload.payload.statusNumber
-            console.log(state.status)
         })
         builder.addCase(MainIdCheckFetch.rejected, (state, action) => {
             state.status = 0;

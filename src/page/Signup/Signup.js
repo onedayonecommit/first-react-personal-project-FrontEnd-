@@ -6,6 +6,7 @@ import { SignupFetch, SignupIdFetch } from '../../redux/middlewares/Signupfetch'
 
 
 const Signup = () => {
+    const user_id = useSelector(state => state.MainidCheck.user_id)
     const [values, setValues] = useState();
     const dispatch = useDispatch()
     // const idCheck = () => {
@@ -29,7 +30,7 @@ const Signup = () => {
         <div>
             <Nav />
             <Searchglass />
-            <input name='IdInput' placeholder='이메일 또는 전화번호' onChange={onChangeId} />
+            <input name='IdInput' placeholder='이메일 또는 전화번호' onChange={onChangeId} value={user_id} />
             <input name='PwInput' placeholder='비밀번호' onChange={onChangeId} />
             <button onClick={() => {
                 dispatch(SignupIdFetch(values))

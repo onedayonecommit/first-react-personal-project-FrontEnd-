@@ -45,7 +45,7 @@ const Before = () => {
                             <option value="portuguese">한국어</option>
                             <option value="english">English</option>
                         </select>
-                        <Link to="#">로그인</Link>
+                        <Link to="/welcome/login">로그인</Link>
                     </div>
                 </div>
                 <div className="sing-in">
