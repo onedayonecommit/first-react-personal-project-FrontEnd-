@@ -1,37 +1,22 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { SignupFetch, SignupIdFetch } from '../../redux/middlewares/Signup';
-
-
-
+import React from 'react'
+import { Link } from 'react-router-dom'
+import css from './Login.css'
 const Login = () => {
-    const [values, setValues] = useState();
-    const dispatch = useDispatch()
-    // const idCheck = () => {
-    //     console.log("HIi")
-    //     dispatch(SignupIdFetch(values))
-    // }
-    const status = useSelector(state => state.idCheck.idCheckStatus
-    )
-    const using = useSelector(state => state.idCheck.using)
-    const afterSignup = () => {
-        using == true ? dispatch(SignupFetch(values)) : alert("중복 검사 먼저 하시오.")
-    }
-    const onChangeId = (e) => {
-        setValues({
-            ...values, [e.target.name]: e.target.value,
-        })
-        console.log(values)
-    }
     return (
-        <div>
-            <input name='IdInput' placeholder='이메일 또는 전화번호' onChange={onChangeId} />
-            <input name='PwInput' placeholder='비밀번호' onChange={onChangeId} />
-            <button onClick={() => {
-                dispatch(SignupIdFetch(values))
-            }} >id중복확인</button>
-            상태: {status}
-            <button onClick={afterSignup} className="bg-slate-500 rounded-xl px-2 text-white">찐 회원가입</button>
+
+        <div className='Signupbody'>
+            <Link className="logo" to="/#"><img src={require("../../image/영화.png")} /></Link>
+            <div className="login">
+                <h1 className="login__title">로그인</h1>
+                <div className="login__group">
+                    <input className="login__group__input" type="text" placeholder='Email or phone number' />
+                </div>
+                <div className="login__group">
+                    <input className="login__group__input" type="password" placeholder='password' />
+                </div>
+                <button className="login__sign-in" type="button">Sign In</button>
+                <div className="login__secondary-cta"><Link className="login__secondary-cta__text" to="#">아이디/비밀번호 찾기</Link><Link className="login__secondary-cta__text login__secondary-cta__text--need-help" to="/welcome/signup">Sign up</Link></div>
+            </div>
         </div>
     )
 }

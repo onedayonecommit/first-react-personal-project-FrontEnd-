@@ -6,12 +6,11 @@ import { Login, Main, Signup } from "./page";
 function App() {
   return (
     <div className="App">
-      <Nav />
-      <Searchglass />
+
       <Routes>
+        <Route path="/welcome/signup" element={<Signup />}></Route>
         <Route path="/welcome/login" element={<Login />}></Route>
         <Route path="/" element={<Main />}></Route>
-        <Route path="/welcome/signup" element={<Signup />}></Route>
       </Routes>
     </div>
   );
