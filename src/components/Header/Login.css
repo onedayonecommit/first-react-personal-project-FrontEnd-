@@ -1,0 +1,22 @@
+.loggo-span {
+  background: url(https://assets.nflxext.com/ffe/siteui/acquisition/simplicity/Devices.png) no-repeat 50% 50%;
+  background-size: 260px;
+  height: 90px;
+}
+.next-btn {
+  border-radius: 4px;
+  font-size: 24px;
+  font-weight: 400;
+  min-height: 64px;
+  line-height: 1;
+  min-width: 110px;
+  padding: 20.5px 2em;
+  width: 340px;
+  background-color: #e50914;
+  color: #fff;
+  border: none;
+}
+
+.next-btn:hover {
+  background-color: red;
+}
