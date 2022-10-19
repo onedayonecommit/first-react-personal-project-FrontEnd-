@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { SignupFetch, SignupIdFetch } from "../middlewares/Signup";
+import { SignupFetch, SignupIdFetch } from "../middlewares/Signupfetch";
 
 const { createSlice } = require("@reduxjs/toolkit");
 

@@ -15,7 +15,6 @@ const Signup = () => {
     const status = useSelector(state => state.idCheck.idCheckStatus
     )
     const using = useSelector(state => state.idCheck.using)
-    const useid = useSelector(state => state.idCheck.useid)
     const afterSignup = () => {
         using == true ? dispatch(SignupFetch(values)) : alert("중복 검사 먼저 하시오.")
     }
@@ -36,7 +35,6 @@ const Signup = () => {
             }} >id중복확인</button>
             상태: {status}
             <button onClick={afterSignup} className="bg-slate-500 rounded-xl px-2 text-white">찐 회원가입</button>
-            123{useid}
         </div>
     )
 }

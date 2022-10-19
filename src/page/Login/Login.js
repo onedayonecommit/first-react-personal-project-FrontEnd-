@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom'
-import { LoginFetch } from '../../redux/middlewares/Loginback';
+import { LoginFetch } from '../../redux/middlewares/Loginfetch';
 import css from './Login.css'
 const Login = () => {
 

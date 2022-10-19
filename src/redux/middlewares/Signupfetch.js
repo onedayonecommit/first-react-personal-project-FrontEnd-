@@ -1,7 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { useDispatch } from "react-redux";
-import { idSuc } from "../reducer/Signup";
+import { idSuc } from "../reducer/SignupSlice";
 
 /**회원가입 */
 const SignupFetch = createAsyncThunk("SignupSlice/SignupFetch", async (state) => {

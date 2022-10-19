@@ -1,6 +1,40 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+import { MainIdCheckFetch } from '../../redux/middlewares/Mainidfetch';
+import { checking } from '../../redux/reducer/MainidSlice';
 const Before = () => {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const statusNumber = useSelector(state => state.MainidCheck.status)
+
+    const [values, setValues] = useState({});
+    useEffect(() => {
+        console.log(statusNumber)
+        switch (statusNumber) {
+            case 0:
+                navigate("/")
+                break;
+            case 1:
+                navigate("/welcome/login")
+                dispatch(checking({ statusNumber: 0 }))
+                break;
+            case 2:
+                navigate("/welcome/signup")
+                dispatch(checking({ statusNumber: 0 }))
+                break;
+            default:
+                break;
+        }
+    }, [statusNumber])
+
+    const onChangeEmail = (e) => {
+        setValues({
+            ...values, [e.target.name]: e.target.value,
+        })
+        console.log(values)
+    }
+
     return (
         <div className='main_body'>
             <main>
@@ -21,8 +55,11 @@ const Before = () => {
                     <h3>그럼 감상 가능합니다.
                     </h3>
                     <label>
-                        <input type="email" placeholder="Email" className='text-gray-900' />
-                        <input type="button" value="시작하기" />
+                        <input type="email" placeholder="Email" className='text-gray-900' name='MainEmail' onChange={onChangeEmail} />
+                        {/* <input type="button" value="시작하기" /> */}
+                        <button className='start-btn' onClick={() => {
+                            dispatch(MainIdCheckFetch(values))
+                        }}>시작하기</button>
                     </label>
                 </div>
             </main>
