@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { SignupFetch, SignupIdFetch } from '../../redux/middlewares/Signup';
 
+
+
 const Login = () => {
     const [values, setValues] = useState();
     const dispatch = useDispatch()
@@ -9,10 +11,13 @@ const Login = () => {
     //     console.log("HIi")
     //     dispatch(SignupIdFetch(values))
     // }
-    const status = useSelector(state => {
-        return state.idCheckStatus;
-    })
-
+    const status = useSelector(state => state.idCheck.idCheckStatus
+    )
+    const using = useSelector(state => state.idCheck.using)
+    const useid = useSelector(state => state.idCheck.useid)
+    const afterSignup = () => {
+        using == true ? dispatch(SignupFetch(values)) : alert("중복 검사 먼저 하시오.")
+    }
     const onChangeId = (e) => {
         setValues({
             ...values, [e.target.name]: e.target.value,
@@ -27,7 +32,9 @@ const Login = () => {
                 dispatch(SignupIdFetch(values))
             }} >id중복확인</button>
             상태: {status}
-            <button onClick={SignupFetch(values)} >찐 회원가입</button>
+            <button onClick={afterSignup} className="bg-slate-500 rounded-xl px-2 text-white">찐 회원가입</button>
+            <h1>{useid}!!?</h1>
+            <h1>{using}!!?</h1>
         </div>
     )
 }
