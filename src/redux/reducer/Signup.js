@@ -25,8 +25,8 @@ const SignupIdCheckSlice = createSlice({
         })
         builder.addCase(SignupIdFetch.fulfilled, (state, action) => {
             state.idCheckStatus = "확인 완료 되었습니다. 결과 확인 부탁드립니다."
-            // state.useid = action.payload.payload
-            state.using = true
+            state.useid = action.payload.payload.id
+            state.using = action.payload.payload.status
         })
         builder.addCase(SignupIdFetch.rejected, (state, action) => {
             state.idCheckStatus = "알 수 없는 에러가 발생하였습니다. 잠시 후 재 시도 바랍니다."

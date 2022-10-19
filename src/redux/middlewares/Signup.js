@@ -40,12 +40,11 @@ const SignupIdFetch = createAsyncThunk("SignupSlice/SignupIdFetch", async (state
     if (idCheckResult == "이미 사용중인 아이디 입니다.") {
         console.log(idCheckResult)
         alert(idCheckResult)
-        return false
+        return idSuc({ id: "", status: false })
     }
     else if (idCheckResult == "사용 가능합니다.") {
         alert(idCheckResult)
-        console.log(idSuc(state.IdInput))
-        return idSuc(state.IdInput)
+        return idSuc({ id: state.IdInput, status: true })
     }
 })
 

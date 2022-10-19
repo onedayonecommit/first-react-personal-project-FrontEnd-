@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+:root {
+  --dark-mode-bg: #000;
+  --dark-mode-text: #fff;
+  --dark-mode-border: #1a1a1a;
+  --dark-mode-footer: #a7a7a7;
+}
+
+.main_body {
+  background-color: var(--dark-mode-bg);
+  color: var(--dark-mode-text);
+}
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.712) url(https://assets.nflxext.com/ffe/siteui/vlv3/271ac55e-7228-438e-824e-92db37981e59/ae50261e-04b7-4a7f-8b9b-3d1a7ee3d849/BR-pt-20220627-popsignuptwoweeks-perspective_alpha_website_small.jpg) no-repeat center / cover;
+  background-blend-mode: darken;
+}
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.logo {
+  margin: -10px 40px;
+}
+.logo img {
+  width: 120px;
+  height: 100px;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  margin: 20px 40px;
+}
+.buttons a {
+  background-color: rgb(255, 0, 0);
+  color: var(--dark-mode-text);
+  text-align: center;
+  vertical-align: center;
+  letter-spacing: 1px;
+  font-weight: bold;
+  width: 80px;
+  height: 35px;
+  padding: 10px;
+  border-radius: 4px;
+}
+select {
+  height: 35px;
+  width: 100px;
+  background-color: rgba(0, 0, 0, 0.356);
+  border: 1px solid var(--dark-mode-text);
+  border-radius: 2px;
+  color: var(--dark-mode-text);
+  text-align: center;
+}
+.sing-in {
+  width: 800px;
+  height: 300px;
+  margin: 5% 0;
+  align-self: center;
+  text-align: center;
+}
+.login {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 450px;
+  height: 650px;
+  margin: 20px 0;
+  align-self: center;
+  padding: 50px;
+}
+.login h1 {
+  margin: 10px 0 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.sing-in h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4rem;
+  margin: 15px;
+}
+.sing-in h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.625rem;
+  font-weight: lighter;
+  margin: 10px;
+}
+.sing-in h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  font-weight: lighter;
+  margin: 10px;
+}
+.sing-in label {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+.sing-in input[type="email"] {
+  height: 4em;
+  width: 500px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  margin: 0 1px;
+  padding: 10px;
+}
+.sing-in input[type="button"] {
+  height: 4em;
+  width: 100px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  background-color: red;
+  color: var(--dark-mode-text);
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-weight: bold;
+}
