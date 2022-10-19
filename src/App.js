@@ -1,18 +1,17 @@
-import { useDispatch, useSelector } from "react-redux";
-import { Route, Router, Routes } from "react-router-dom";
-import { LoginBefore, Nav, Searchglass } from "./components";
-import { Login, Main, Signup } from "./page";
+import { Route, Routes } from "react-router-dom";
+import { Login, Main, SignupSecond, Signuptest } from "./page";
 
 function App() {
   return (
     <div className="App">
 
       <Routes>
-        <Route path="/welcome/signup" element={<LoginBefore />}></Route>
-        <Route path="/welcome/login" element={<Login />}></Route>
         <Route path="/" element={<Main />}></Route>
+        <Route path="/welcome/signup" element={<Signuptest />}></Route>
+        <Route path="/welcome/signup/first" element={<SignupSecond />}></Route>
+        <Route path="/welcome/login" element={<Login />}></Route>
       </Routes>
-    </div>
+    </div >
   );
 }
 
