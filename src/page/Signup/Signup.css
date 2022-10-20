@@ -98,7 +98,7 @@
 }
 
 .table-tr {
-  height: 61px;
+  height: 80px;
   border-bottom: solid;
   border-color: #e5e7eb;
 }
@@ -112,4 +112,14 @@
   text-align: center;
   padding-bottom: 15px;
   padding-top: 15px;
+}
+
+.buy-option-btn {
+  height: 50px;
+  margin: 15px 0;
+  width: 160px;
+  border-radius: 10px;
+  background-color: white;
+  border: 2px solid #e50914;
+  color: #e50914;
 }
