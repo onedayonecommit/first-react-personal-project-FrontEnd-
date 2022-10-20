@@ -1,0 +1,115 @@
+.signup-input {
+  height: 60px;
+  padding: 10px 10px 0;
+  width: 420px;
+  box-shadow: none;
+  appearance: none;
+  border: 1px solid #8c8c8c;
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: #000;
+  display: block;
+  font-size: 16px;
+  line-height: normal;
+  font: inherit;
+  margin-top: 10px;
+}
+::placeholder {
+  color: black;
+  font-size: 1.2em;
+  font-weight: 400;
+  opacity: 1; /* Firefox */
+}
+
+.checkbox {
+  height: 30px;
+  width: 30px;
+  background-color: #fff;
+  border: 1px solid;
+  content: "";
+  border-radius: 0%;
+}
+
+.checkbox-div {
+  margin-bottom: 10px;
+  width: 420px;
+}
+
+.Signup-final-container {
+  width: 950px;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 2.5%;
+}
+
+/* .membership-label {
+  width: 33.3333%;
+  padding: 12px 0;
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  cursor: default;
+} */
+
+/* input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.membership-input {
+  left: 50%;
+  opacity: 0;
+  top: 50%;
+  height: 120px;
+  width: 120px;
+  appearance: none;
+  background: none;
+  border: 0;
+  margin: 0;
+  z-index: -1;
+  line-height: normal;
+}
+
+.membership-span {
+  background: #e50914;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0 auto;
+  opacity: 0.6;
+  padding: 18px;
+  text-align: center;
+} */
+
+.membership-choose-box {
+  width: 120px;
+  height: 120px;
+  background-color: #e50914;
+  margin: 0px 35px;
+  border-radius: 2px;
+  color: white;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.table-container {
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+.table-tr {
+  height: 61px;
+  border-bottom: solid;
+  border-color: #e5e7eb;
+}
+
+.table-div {
+  width: 378px;
+}
+
+.table-div-child {
+  width: 190px;
+  text-align: center;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}

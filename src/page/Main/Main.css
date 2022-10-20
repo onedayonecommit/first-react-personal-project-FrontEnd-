@@ -46,12 +46,11 @@ main {
   background-color: rgb(255, 0, 0);
   color: var(--dark-mode-text);
   text-align: center;
-  vertical-align: center;
   letter-spacing: 1px;
   font-weight: bold;
   width: 80px;
   height: 35px;
-  padding: 10px;
+  padding-top: 5.5px;
   border-radius: 4px;
 }
 select {
