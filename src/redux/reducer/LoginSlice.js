@@ -26,7 +26,7 @@ const LoginSlice = createSlice({
             state.accesstoken = action.payload
         },
         logout: (state) => {
-            state = { user_id: "", user_pw: "", at: "" }
+            state.loging = false;
         }
     },
     extraReducers: (builder) => {

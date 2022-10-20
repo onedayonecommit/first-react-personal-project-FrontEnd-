@@ -1,17 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Nav, Searchglass } from '../../components';
+import After from './After';
 import Before from './Before';
 import css from "./Main.css"
 const Main = () => {
     const loging = useSelector(state => state.Login.loging)
+    useEffect((e) => {
+
+    })
     return (
         <div>
             {loging == false ?
                 <Before />
                 :
-                <>ㅇㅇ 잘했음</>
+                <After />
             }
             {/* <Nav />
             <Searchglass />

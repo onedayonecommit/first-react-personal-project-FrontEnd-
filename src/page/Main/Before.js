@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { MainIdCheckFetch } from '../../redux/middlewares/Mainidfetch';
-import { checking } from '../../redux/reducer/MainidSlice';
+import { checking, defMainId } from '../../redux/reducer/MainidSlice';
 const Before = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const statusNumber = useSelector(state => state.MainidCheck.status)
 
-    const [values, setValues] = useState({});
     useEffect(() => {
         console.log(statusNumber)
         switch (statusNumber) {
@@ -28,11 +27,9 @@ const Before = () => {
         }
     }, [statusNumber])
 
+    const main_id = useSelector(state => state.MainidCheck.main_id)
     const onChangeEmail = (e) => {
-        setValues({
-            ...values, [e.target.name]: e.target.value,
-        })
-        console.log(values)
+        dispatch(defMainId(e.target.value))
     }
 
     return (
@@ -59,7 +56,7 @@ const Before = () => {
                             <input type="email" placeholder="Email" className='text-gray-900' name='MainEmail' onChange={onChangeEmail} />
                             {/* <input type="button" value="시작하기" /> */}
                             <button className='start-btn' onClick={() => {
-                                dispatch(MainIdCheckFetch(values))
+                                dispatch(MainIdCheckFetch({ user_id: main_id }))
                             }}>시작하기</button>
                         </label>
                     </div>

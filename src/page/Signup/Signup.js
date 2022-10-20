@@ -16,7 +16,7 @@ const Signup = () => {
     const status = useSelector(state => state.idCheck.idCheckStatus
     )
     const using = useSelector(state => state.idCheck.using)
-    const useid = useSelector(state => state.idCheck.useid)
+    const useid = useSelector(state => state.idCheck.user_id)
     const afterSignup = () => {
         using == true ? dispatch(SignupFetch(values)) : alert("중복 검사 먼저 하시오.")
     }

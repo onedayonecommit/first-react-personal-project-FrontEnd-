@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { SignupBefore } from '../../components'
-import { motion } from 'framer-motion';
 const Signuptest = () => {
     return (
         <div>

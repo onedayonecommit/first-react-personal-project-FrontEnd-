@@ -8,24 +8,35 @@ const { createSlice } = require("@reduxjs/toolkit");
 const SignupIdCheckSlice = createSlice({
     name: "idCheck",
     initialState: {
-        useid: "",
+        user_id: "",
         using: false,
-        idCheckStatus: "서버 상태 좋음"
+        idCheckStatus: "서버 상태 좋음",
+        user_pw: ""
+
     }, reducers: {
         idSuc: (state, action) => {
-            state.useid = action.payload
+            state.user_id
+                = action.payload
             state.using = true
             console.log(state)
+        },
+        changeId: (state, action) => {
+            state.user_id = action.payload;
+        },
+        changePw: (state, action) => {
+            state.user_pw = action.payload;
         }
     }, extraReducers: (builder) => {
         builder.addCase(SignupIdFetch.pending, (state, action) => {
             state.idCheckStatus = "중복 확인중에 있습니다. 잠시만 기다려주십시오."
-            state.useid = ""
+            state.user_id
+                = ""
             state.using = false
         })
         builder.addCase(SignupIdFetch.fulfilled, (state, action) => {
             state.idCheckStatus = "확인 완료 되었습니다. 결과 확인 부탁드립니다."
-            state.useid = action.payload.payload.id
+            state.user_id
+                = action.payload.payload.id
             state.using = action.payload.payload.status
         })
         builder.addCase(SignupIdFetch.rejected, (state, action) => {
@@ -67,4 +78,4 @@ const SignupSlice = createSlice({
 
 export { SignupSlice, SignupIdCheckSlice }
 export const { signup } = SignupSlice.actions
-export const { idSuc } = SignupIdCheckSlice.actions;
+export const { idSuc, changeId, changePw } = SignupIdCheckSlice.actions;
