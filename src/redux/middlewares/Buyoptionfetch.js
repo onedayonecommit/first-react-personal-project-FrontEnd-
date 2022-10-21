@@ -5,7 +5,7 @@ const BuyOptionFetch = createAsyncThunk("BuyoptionSlice/BuyOptionFetch", async (
     console.log(state)
     const buyResult = await axios({
         method: "POST",
-        url: "https://kapi.com/v1/payment/ready",
+        url: "https://kapi.kakao.com/v1/payment/ready",
         headers: {
             Authorization: "KakaoAK a138e09487948affbe264ae294b29466",
             "Content-type": "application/x-www-form-urlencoded;charset=utf-8",
@@ -16,13 +16,18 @@ const BuyOptionFetch = createAsyncThunk("BuyoptionSlice/BuyOptionFetch", async (
             partner_user_id: "gyeonghwan",
             item_name: state.optionName,
             quantity: 1,
-            total_amount: 1000000,
+            total_amount: state.optionPrice,
             vat_amount: 200,
             tax_free_amount: 0,
-            approval_url: "",
-            approval_url: "",
-            approval_url: "",
+            approval_url: "https://localhost:3000/",
+            fail_url: "https://localhost:3000/",
+            cancel_url: "https://localhost:3000/",
         }
+    }).then((e) => {
+        console.log(e.data)
+
+    }).catch((error) => {
+        console.log(error)
     })
     return buyResult
 })

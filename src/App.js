@@ -11,6 +11,7 @@ function App() {
         <Route path="/welcome/signup/first" element={<SignupSecond />}></Route>
         <Route path="/welcome/signup/second" element={<SignupFinal />}></Route>
         <Route path="/welcome/login" element={<Login />}></Route>
+        <Route path="/welcome/login" element={<Login />}></Route>
       </Routes>
     </div >
   );

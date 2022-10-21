@@ -51,13 +51,13 @@ const SignupFinal = () => {
                 </table>
                 <div className='btn-divbox flex justify-between mx-16'>
                     <button className='buy-option-btn' onClick={() => {
-                        dispatch(BuyOptionFetch({ optionName: "독신" }))
+                        dispatch(BuyOptionFetch({ optionName: "독신", optionPrice: 4900 }))
                     }}>독신 구매</button>
                     <button className='buy-option-btn' onClick={() => {
-                        dispatch(BuyOptionFetch({ optionName: "커플" }))
+                        dispatch(BuyOptionFetch({ optionName: "커플", optionPrice: 7900 }))
                     }}>커플 구매</button>
                     <button className='buy-option-btn' onClick={() => {
-                        dispatch(BuyOptionFetch({ optionName: "패밀리" }))
+                        dispatch(BuyOptionFetch({ optionName: "패밀리", optionPrice: 12900 }))
                     }}>패밀리 구매</button>
                     <button className='buy-option-btn' onClick={() => {
 
