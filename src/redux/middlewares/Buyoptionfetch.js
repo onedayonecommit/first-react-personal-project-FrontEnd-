@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { changePgToken, changeUrl } from "../reducer/BuyoptionSlice";
 
 const BuyOptionFetch = createAsyncThunk("BuyoptionSlice/BuyOptionFetch", async (state) => {
     console.log(state)
@@ -19,12 +20,12 @@ const BuyOptionFetch = createAsyncThunk("BuyoptionSlice/BuyOptionFetch", async (
             total_amount: state.optionPrice,
             vat_amount: 200,
             tax_free_amount: 0,
-            approval_url: "https://localhost:3000/",
-            fail_url: "https://localhost:3000/",
-            cancel_url: "https://localhost:3000/",
+            approval_url: "https://localhost:3000/kakaowait",
+            fail_url: "https://localhost:3000/kakaofail",
+            cancel_url: "https://localhost:3000/kakaocancel",
         }
     }).then((e) => {
-        console.log(e.data)
+        return e.data
 
     }).catch((error) => {
         console.log(error)

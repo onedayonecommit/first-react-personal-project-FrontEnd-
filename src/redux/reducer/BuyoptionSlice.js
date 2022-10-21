@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { BuyOptionFetch } from "../middlewares/Buyoptionfetch";
+import { useNavigate } from 'react-router-dom';
 
 const BuyOptionSlice = createSlice({
     name: "buyOption",
@@ -17,6 +18,7 @@ const BuyOptionSlice = createSlice({
             state.tid = action.payload
         },
         changePgToken: (state, action) => {
+            console.log(action)
             state.pg_token = action.payload
         },
         changeBuyStatus: (state, action) => {
@@ -28,10 +30,10 @@ const BuyOptionSlice = createSlice({
             state.buy_status = "로딩 중"
         })
         builder.addCase(BuyOptionFetch.fulfilled, (state, action) => {
-            state.next_redirect_pc_url = action.payload.payload.next_redirect_pc_url
-            state.tid = action.payload.payload.tid
-            state.pg_token = action.payload.payload.pg_token
-            state.buy_status = action.payload.payload.buy_status
+            console.log(action)
+            state.next_redirect_pc_url = action.payload.next_redirect_pc_url
+            state.tid = action.payload.tid
+            state.buy_status = "결제 진행 중"
         })
         builder.addCase(BuyOptionFetch.rejected, (state, action) => {
             state.next_redirect_pc_url = ""

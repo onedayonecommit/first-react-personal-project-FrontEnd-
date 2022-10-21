@@ -3,12 +3,16 @@ import { useDispatch, useSelector } from 'react-redux'
 import { SignupBefore } from '../../components'
 import { check, membership } from "../../image"
 import { BuyOptionFetch } from '../../redux/middlewares/Buyoptionfetch'
+import { useNavigate } from 'react-router-dom';
 
 const SignupFinal = () => {
     const oneprice = useSelector(state => state.Price.oneprice)
     const twoprice = useSelector(state => state.Price.twoprice)
     const fourprice = useSelector(state => state.Price.fourprice)
     const dispatch = useDispatch();
+    const nav = useNavigate();
+    const next_url = useSelector(state => state.BuyOption.next_redirect_pc_url)
+    console.log(next_url)
     return (
         <div>
             <SignupBefore />
@@ -52,6 +56,7 @@ const SignupFinal = () => {
                 <div className='btn-divbox flex justify-between mx-16'>
                     <button className='buy-option-btn' onClick={() => {
                         dispatch(BuyOptionFetch({ optionName: "독신", optionPrice: 4900 }))
+                        nav(next_url)
                     }}>독신 구매</button>
                     <button className='buy-option-btn' onClick={() => {
                         dispatch(BuyOptionFetch({ optionName: "커플", optionPrice: 7900 }))
