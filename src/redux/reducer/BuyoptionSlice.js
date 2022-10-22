@@ -8,7 +8,8 @@ const BuyOptionSlice = createSlice({
         next_redirect_pc_url: "",
         tid: "",
         pg_token: "",
-        buy_status: ""
+        buy_status: "",
+        buy_ticket: 0,
     },
     reducers: {
         changeUrl: (state, action) => {
@@ -23,6 +24,10 @@ const BuyOptionSlice = createSlice({
         },
         changeBuyStatus: (state, action) => {
             state.buy_status = action.payload
+        },
+        changeTicket: (state, action) => {
+            state.buy_ticket = action.payload
+            console.log(state.buy_ticket)
         }
     },
     extraReducers: (builder) => {
@@ -45,4 +50,4 @@ const BuyOptionSlice = createSlice({
 })
 
 export { BuyOptionSlice }
-export const { changeBuyStatus, changePgToken, changeTid, changeUrl } = BuyOptionSlice.actions
+export const { changeBuyStatus, changePgToken, changeTid, changeUrl, changeTicket } = BuyOptionSlice.actions

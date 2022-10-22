@@ -26,7 +26,6 @@ const BuyOptionFetch = createAsyncThunk("BuyoptionSlice/BuyOptionFetch", async (
         }
     }).then((e) => {
         return e.data
-
     }).catch((error) => {
         console.log(error)
     })

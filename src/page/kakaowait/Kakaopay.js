@@ -13,8 +13,8 @@ const Kakaopay = () => {
     }
     getpgtoken()
     const pg_token = useSelector(state => state.BuyOption.pg_token)
-    console.log(pg_token)
     useEffect(() => {
+        console.log(pg_token)
         nav('/')
     })
 
