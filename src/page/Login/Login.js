@@ -14,7 +14,7 @@ const Login = () => {
     const onChangePw = (e) => {
         dispatch(changePw(e.target.value))
     }
-    const user_id = useSelector(state => state.MainidCheck.login_user_id)
+    const user_id = useSelector(state => state.MainidCheck.login_user_email)
     const user_pw = useSelector(state => state.MainidCheck.user_pw)
     useEffect(() => {
         console.log(loging)
@@ -31,7 +31,7 @@ const Login = () => {
                 <div className="login__group">
                     <input className="login__group__input" type="text" placeholder='Email or phone number' name='loginIdInput' onChange={onChangeId} value={user_id}
                     // onKeyUp={() => {
-                    //     dispatch(checking({ login_user_id: values.loginIdInput }))
+                    //     dispatch(checking({ login_user_email: values.loginIdInput }))
                     // }}
                     />
                 </div>

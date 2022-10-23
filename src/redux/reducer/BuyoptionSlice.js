@@ -9,6 +9,7 @@ const BuyOptionSlice = createSlice({
         tid: "",
         pg_token: "",
         buy_status: "",
+        imsee_ticket: 0,
         buy_ticket: 0,
     },
     reducers: {
@@ -25,10 +26,15 @@ const BuyOptionSlice = createSlice({
         changeBuyStatus: (state, action) => {
             state.buy_status = action.payload
         },
+        changeImseeTicket: (state, action) => {
+            state.imsee_ticket = action.payload
+            console.log(state.imsee_ticket)
+        },
         changeTicket: (state, action) => {
             state.buy_ticket = action.payload
             console.log(state.buy_ticket)
-        }
+        },
+
     },
     extraReducers: (builder) => {
         builder.addCase(BuyOptionFetch.pending, (state, action) => {
@@ -50,4 +56,4 @@ const BuyOptionSlice = createSlice({
 })
 
 export { BuyOptionSlice }
-export const { changeBuyStatus, changePgToken, changeTid, changeUrl, changeTicket } = BuyOptionSlice.actions
+export const { changeBuyStatus, changePgToken, changeTid, changeUrl, changeTicket, changeImseeTicket } = BuyOptionSlice.actions

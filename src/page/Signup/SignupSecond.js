@@ -1,21 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { SignupBefore } from '../../components';
-import { defSignupId } from '../../redux/reducer/MainidSlice';
-import { changeId, changePw } from '../../redux/reducer/SignupSlice';
+import IdReCheckFetch from '../../redux/middlewares/IdRecheckfetch';
+import { defSignupMainEamil, defSignupId, changePw } from '../../redux/reducer/MainidSlice';
 import css from './Signup.css'
 const SignupSecond = () => {
-    const signupId = useSelector((state) => state.MainidCheck.signup_user_id);
+    const nav = useNavigate();
+    const signupId = useSelector((state) => state.MainidCheck.signup_main_email);
+    const signupPw = useSelector((state) => state.MainidCheck.user_pw);
     const dispatch = useDispatch();
-    console.log(signupId, "!!!!!!!!!!!");
     const onChangeId = (e) => {
-        dispatch(defSignupId(e.target.value))
+        dispatch(defSignupMainEamil(e.target.value))
     }
     const onChangePw = (e) => {
         dispatch(changePw(e.target.value))
     }
 
+    const checkStatus = useSelector(state => state.idRecheck.status)
+    useEffect(() => {
+        checkStatus == true ? nav("/welcome/signup/second") : null
+    }, [checkStatus])
     return (
         <div>
             <SignupBefore />
@@ -27,7 +32,11 @@ const SignupSecond = () => {
                 <input className='signup-input' placeholder='Password' type="password" onChange={onChangePw} />
                 <div className='checkbox-div mt-4 flex items-center'><input className='checkbox' placeholder='Password' type="checkbox" /><span className='ml-2 '>이용약관 동의</span></div>
                 <div className='checkbox-div flex items-center'><input className='checkbox' placeholder='Password' type="checkbox" /><span className='ml-2'>이벤트성 수신 동의 ?</span> </div>
-                <Link className='mb-32' to={"/welcome/signup/second"}><button className='next-btn mt-8'>다음</button></Link>
+                {/* <Link className='mb-32' to={"/welcome/signup/second"}> */}
+                <button className='next-btn mt-8' onClick={() => {
+                    dispatch(IdReCheckFetch({ user_email: signupId, user_pw: signupPw }))
+                }}>다음</button>
+                {/* </Link> */}
             </div>
         </div>
     )

@@ -4,7 +4,8 @@ import { SignupBefore } from '../../components'
 import { check, membership } from "../../image"
 import { BuyOptionFetch } from '../../redux/middlewares/Buyoptionfetch'
 import { useNavigate } from 'react-router-dom';
-import { changeUrl } from '../../redux/reducer/BuyoptionSlice'
+import { changeImseeTicket, changeTicket, changeUrl } from '../../redux/reducer/BuyoptionSlice'
+import { SignupFetch } from '../../redux/middlewares/Signupfetch'
 
 const SignupFinal = () => {
     const nav = useNavigate();
@@ -14,7 +15,14 @@ const SignupFinal = () => {
     const dispatch = useDispatch();
     const next_url = useSelector(state => state.BuyOption.next_redirect_pc_url)
     const pgToken = useSelector(state => state.BuyOption.pg_token)
+    const user_email = useSelector(state => state.MainidCheck.signup_main_email)
+    const user_pw = useSelector(state => state.MainidCheck.user_pw)
+    const checkStatus = useSelector(state => state.idRecheck.status)
     console.log(next_url)
+    console.log(user_email, "!!!!!!!!")
+    useEffect(() => {
+        checkStatus == false ? nav("/welcome/signup") : null
+    }, [])
     useEffect(() => {
         console.log(pgToken)
         next_url == "" ? console.log("결제준비") : window.open(next_url)
@@ -65,23 +73,30 @@ const SignupFinal = () => {
                             alert("취소 되었습니다.")
                         }
                         else {
-                            dispatch(BuyOptionFetch({ optionName: "독신", optionPrice: 4900 }))
+                            dispatch(BuyOptionFetch({ optionName: "독신", optionPrice: 4900, user_email: user_email, change_option_number: 1 }))
                         }
                     }}>독신 구매</button>
                     <button className='buy-option-btn' onClick={() => {
                         if (!window.confirm("옵션 : 커플 / 가격 : 7,900원 구매 하시겠습니까?")) alert("취소 되었습니다.")
-                        else dispatch(BuyOptionFetch({ optionName: "커플", optionPrice: 7900 }))
+                        else {
+                            dispatch(BuyOptionFetch({ optionName: "커플", optionPrice: 7900, user_email: user_email, change_option_number: 2 }))
+                        }
                     }}>커플 구매</button>
                     <button className='buy-option-btn' onClick={() => {
                         if (!window.confirm("옵션 : 패밀리 / 가격 : 12,900원 구매 하시겠습니까?")) alert("취소 되었습니다.")
-                        else dispatch(BuyOptionFetch({ optionName: "패밀리", optionPrice: 12900 }))
+                        else {
+                            dispatch(BuyOptionFetch({ optionName: "패밀리", optionPrice: 12900, user_email: user_email, change_option_number: 3 }))
+                        }
                     }}>패밀리 구매</button>
                     <button className='buy-option-btn' onClick={() => {
-
+                        // console.log(user_email, user_pw)
+                        // dispatch(SignupFetch({ user_email: user_email, user_pw: user_pw }))
+                        alert("두번 다시 이 가격에 못삽니다. 로그인하세요")
+                        window.location.href = "/welcome/login"
                     }}>다음에 구매</button>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }
 

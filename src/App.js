@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Kakaopay, Login, Main, SignupFinal, SignupSecond, Signuptest, Kakaocancel, Kakaofail } from "./page";
+import { Kakaopay, Login, Main, SignupFinal, SignupSecond, Signuptest, Kakaocancel, Kakaofail, SignupFinally } from "./page";
 
 function App() {
   return (

@@ -17,11 +17,11 @@ const MainIdCheckFetch = createAsyncThunk("MainIdCheckSlice/MainIdCheckFetch", a
     if (mainIdCheckResult === "로그인 창으로") {
         alert("로그인 창으로 이동합니다.")
         console.log(state.user_id)
-        return checking({ statusNumber: 1, login_user_id: state.user_id, signup_user_id: "" })
+        return checking({ statusNumber: 1, login_user_email: state.user_id, signup_user_id: "" })
     }
     else if (mainIdCheckResult === "회원가입 창으로") {
         alert("해당 이메일로 가입 가능")
-        return checking({ statusNumber: 2, signup_user_id: state.user_id, login_user_id: "" })
+        return checking({ statusNumber: 2, signup_user_id: state.user_id, login_user_email: "" })
     }
 })
 

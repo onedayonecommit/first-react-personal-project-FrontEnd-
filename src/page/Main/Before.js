@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { MainIdCheckFetch } from '../../redux/middlewares/Mainidfetch';
-import { checking, defMainId } from '../../redux/reducer/MainidSlice';
+import { checking, defSignupMainEamil } from '../../redux/reducer/MainidSlice';
 const Before = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -27,9 +27,9 @@ const Before = () => {
         }
     }, [statusNumber])
 
-    const main_id = useSelector(state => state.MainidCheck.main_id)
+    const signup_main_email = useSelector(state => state.MainidCheck.signup_main_email)
     const onChangeEmail = (e) => {
-        dispatch(defMainId(e.target.value))
+        dispatch(defSignupMainEamil(e.target.value))
     }
 
     return (
@@ -56,7 +56,7 @@ const Before = () => {
                             <input type="email" placeholder="Email" className='text-gray-900' name='MainEmail' onChange={onChangeEmail} />
                             {/* <input type="button" value="시작하기" /> */}
                             <button className='start-btn' onClick={() => {
-                                dispatch(MainIdCheckFetch({ user_id: main_id }))
+                                dispatch(MainIdCheckFetch({ user_email: signup_main_email }))
                             }}>시작하기</button>
                         </label>
                     </div>

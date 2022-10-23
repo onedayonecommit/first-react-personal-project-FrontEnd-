@@ -9,4 +9,4 @@ import Kakaocancel from "./kakaowait/Kakaocancel";
 import Kakaofail from "./kakaowait/Kakaofail";
 
 
-export { Login, Main, Signup, Signuptest, SignupSecond, SignupFinal, Kakaopay, Kakaocancel, Kakaofail }
+export { Login, Main, Signup, Signuptest, SignupSecond, SignupFinal, Kakaopay, Kakaocancel, Kakaofail, }

@@ -4,6 +4,7 @@ import { LoginSlice } from "./LoginSlice";
 import { MainIdCheckSlice } from "./MainidSlice";
 import { PriceSlice } from "./PriceSlice";
 import { BuyOptionSlice } from "./BuyoptionSlice";
+import IdRecheckSlice from "./IdRecheckSlice";
 
 const rootReducer = combineReducers({
     Signup: SignupSlice.reducer,
@@ -11,7 +12,8 @@ const rootReducer = combineReducers({
     idCheck: SignupIdCheckSlice.reducer,
     MainidCheck: MainIdCheckSlice.reducer,
     Price: PriceSlice.reducer,
-    BuyOption: BuyOptionSlice.reducer
+    BuyOption: BuyOptionSlice.reducer,
+    idRecheck: IdRecheckSlice.reducer
 });
 
 export default rootReducer;

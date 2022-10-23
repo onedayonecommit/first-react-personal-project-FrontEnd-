@@ -14,10 +14,14 @@ const SignupFetch = createAsyncThunk("SignupSlice/SignupFetch", async (state) =>
     }).catch((error) => {
         console.log(error)
     })
-    if (signupResult == "축하합니다.") return alert("축하합니다.")
+    if (signupResult == "축하합니다.") {
+        alert("축하합니다.")
+        return window.location.href = "/welcome/login"
+    }
     else {
         console.log(signupResult)
-        return alert(signupResult)
+        alert(signupResult)
+        return window.location.href = "/"
     }
     // return signupResult
 })

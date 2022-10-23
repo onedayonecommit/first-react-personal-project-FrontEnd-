@@ -20,11 +20,12 @@ const BuyOptionFetch = createAsyncThunk("BuyoptionSlice/BuyOptionFetch", async (
             total_amount: state.optionPrice,
             vat_amount: 200,
             tax_free_amount: 0,
-            approval_url: "https://localhost:3000/kakaowait",
+            approval_url: "https://localhost:3000/kakaowait/id",
             fail_url: "https://localhost:3000/kakaofail",
             cancel_url: "https://localhost:3000/kakaocancel",
         }
     }).then((e) => {
+        console.log(e)
         return e.data
     }).catch((error) => {
         console.log(error)
