@@ -8,7 +8,7 @@ const KakaoFinalFetch = createAsyncThunk("KakaoFianlFetch/Fetch", (state) => {
         data: state
     }).then((e) => {
         alert(e.data)
-        window.location.href = "/"
+        window.location.href = "/welcome/login"
         return e.data
     }).catch((error) => {
         console.log(error)
