@@ -7,6 +7,6 @@ import SignupFinal from "./Signup/SignupFinal";
 import Kakaopay from "./kakaowait/Kakaopay";
 import Kakaocancel from "./kakaowait/Kakaocancel";
 import Kakaofail from "./kakaowait/Kakaofail";
+import Kakaopayend from "./kakaowait/Kakaopayend";
 
-
-export { Login, Main, Signup, Signuptest, SignupSecond, SignupFinal, Kakaopay, Kakaocancel, Kakaofail, }
+export { Login, Main, Signup, Signuptest, SignupSecond, SignupFinal, Kakaopay, Kakaocancel, Kakaofail, Kakaopayend }

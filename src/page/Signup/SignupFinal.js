@@ -14,7 +14,7 @@ const SignupFinal = () => {
     const fourprice = useSelector(state => state.Price.fourprice)
     const dispatch = useDispatch();
     const next_url = useSelector(state => state.BuyOption.next_redirect_pc_url)
-    const pgToken = useSelector(state => state.BuyOption.pg_token)
+    const imsee_ticket = useSelector(state => state.BuyOption.imsee_ticket)
     const user_email = useSelector(state => state.MainidCheck.signup_main_email)
     const user_pw = useSelector(state => state.MainidCheck.user_pw)
     const checkStatus = useSelector(state => state.idRecheck.status)
@@ -22,10 +22,10 @@ const SignupFinal = () => {
     console.log(user_email, "!!!!!!!!")
     useEffect(() => {
         checkStatus == false ? nav("/welcome/signup") : null
-    }, [])
+    }, [checkStatus])
     useEffect(() => {
-        console.log(pgToken)
         next_url == "" ? console.log("결제준비") : window.open(next_url)
+        imsee_ticket == 0 ? null : nav("/kakaoend")
     }, [next_url])
     return (
         <div>
@@ -69,28 +69,30 @@ const SignupFinal = () => {
                 </table>
                 <div className='btn-divbox flex justify-between'>
                     <button className='buy-option-btn' onClick={() => {
-                        if (!window.confirm("옵션 : 독신 / 가격 : 4,900원 구매 하시겠습니까?")) {
+                        if (!window.confirm("옵션 : 독신 / 가격 : 4,900원 구매 하시겠습니까? 확인 누르면 순간 옵션 번복 불가")) {
                             alert("취소 되었습니다.")
                         }
                         else {
                             dispatch(BuyOptionFetch({ optionName: "독신", optionPrice: 4900, user_email: user_email, change_option_number: 1 }))
+                            dispatch(changeImseeTicket(1))
+                            // window.location.href = "/kakaoend"
                         }
                     }}>독신 구매</button>
                     <button className='buy-option-btn' onClick={() => {
-                        if (!window.confirm("옵션 : 커플 / 가격 : 7,900원 구매 하시겠습니까?")) alert("취소 되었습니다.")
+                        if (!window.confirm("옵션 : 커플 / 가격 : 7,900원 구매 하시겠습니까? 확인 누르면 순간 옵션 번복 불가")) alert("취소 되었습니다.")
                         else {
                             dispatch(BuyOptionFetch({ optionName: "커플", optionPrice: 7900, user_email: user_email, change_option_number: 2 }))
+                            dispatch(changeImseeTicket(2))
                         }
                     }}>커플 구매</button>
                     <button className='buy-option-btn' onClick={() => {
-                        if (!window.confirm("옵션 : 패밀리 / 가격 : 12,900원 구매 하시겠습니까?")) alert("취소 되었습니다.")
+                        if (!window.confirm("옵션 : 패밀리 / 가격 : 12,900원 구매 하시겠습니까? 확인 누르면 순간 옵션 번복 불가")) alert("취소 되었습니다.")
                         else {
                             dispatch(BuyOptionFetch({ optionName: "패밀리", optionPrice: 12900, user_email: user_email, change_option_number: 3 }))
+                            dispatch(changeImseeTicket(3))
                         }
                     }}>패밀리 구매</button>
                     <button className='buy-option-btn' onClick={() => {
-                        // console.log(user_email, user_pw)
-                        // dispatch(SignupFetch({ user_email: user_email, user_pw: user_pw }))
                         alert("두번 다시 이 가격에 못삽니다. 로그인하세요")
                         window.location.href = "/welcome/login"
                     }}>다음에 구매</button>

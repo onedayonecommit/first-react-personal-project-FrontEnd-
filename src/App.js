@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Kakaopay, Login, Main, SignupFinal, SignupSecond, Signuptest, Kakaocancel, Kakaofail, SignupFinally } from "./page";
+import { Kakaopay, Login, Main, SignupFinal, SignupSecond, Signuptest, Kakaocancel, Kakaofail, SignupFinally, Kakaopayend } from "./page";
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
         <Route path="/kakaowait" element={<Kakaopay />}></Route>
         <Route path="/kakaofail" element={<Kakaofail />}></Route>
         <Route path="/kakaocancel" element={<Kakaocancel />}></Route>
+        <Route path="/kakaoend" element={<Kakaopayend />}></Route>
       </Routes>
     </div >
   );
