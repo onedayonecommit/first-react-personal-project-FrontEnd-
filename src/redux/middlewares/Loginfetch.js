@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { setCookie } from "../../Cookies";
 import { login } from "../reducer/LoginSlice";
 
 const LoginFetch = createAsyncThunk("LoginSlice/LoginFetch", async (state) => {
@@ -20,6 +21,11 @@ const LoginFetch = createAsyncThunk("LoginSlice/LoginFetch", async (state) => {
     }
     else {
         alert("환영합니다.")
+        setCookie("My AT", LoginResult, {
+            path: "/",
+            secure: true,
+            sameSite: "none"
+        })
         return login({ id: state.loginIdInput, AT: LoginResult, status: true })
     }
 })

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { MainRanddomeMovie, Searchbar } from '../../components';
 import { logout } from '../../redux/reducer/LoginSlice';
 
 const After = () => {
@@ -8,12 +9,29 @@ const After = () => {
     // 그리고 배열에 담은다음 랜덤으로 하나 추출해서 화면에 전광판마냥 크게 하나 띄우고
     // 아래에 슬라이드로 영화 3개 번갈아가면서 보여주고 그 아래에선 그냥 네모박스 3개 만들고 영화 포스터들 띄우고 클릭하면 들어가서 보기
     // 맨 아래에 푸터 
-    // 네비 바 == 로고 / 영화 / 드라마 / 
+    // 네비 바 == 로고 / 영화 / 
     const navigate = useNavigate();
     const dispatch = useDispatch();
     return (
         <div>
-
+            <div className='header-nav header-active flex items-center'>
+                <div className='brand-loggo flex'>
+                    <img className='nav-loggo-img' src={require("../../image/영화.png")}></img>
+                </div>
+                <div className='main-div'>
+                    <div><Link className='nav-child'>금일 추천 영화</Link>
+                        <Link className='nav-child'>금주 추천 영화</Link>
+                        <Link className='nav-child'>영화</Link>
+                        <Link className='nav-child'>드라마</Link>
+                        <Link className='nav-child'>평론판</Link>
+                        <Link className='nav-child'>고객센터</Link></div>
+                    <div>
+                        <Searchbar />
+                    </div>
+                    <div><button className='logout-btn mr-20'>LOG-OUT</button></div>
+                </div>
+            </div>
+            <MainRanddomeMovie />
         </div>
     )
 }

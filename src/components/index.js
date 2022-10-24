@@ -3,4 +3,7 @@ import Nav from "./Nav/Nav";
 import Side from "./Side/Side";
 import SignupBefore from "./Header/SignupBefore";
 import Motiondiv from "./Motiondiv/Motiondiv";
-export { Searchglass, Nav, Side, SignupBefore, Motiondiv }
+import Searchbar from "./Searchglass/Searchbar";
+import MainRanddomeMovie from "./MoviePlayer/MainRanddomeMovie";
+
+export { Searchglass, Nav, Side, SignupBefore, Motiondiv, Searchbar, MainRanddomeMovie }
