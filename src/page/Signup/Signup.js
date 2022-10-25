@@ -27,7 +27,7 @@ const Signup = () => {
         console.log(values)
     }
     return (
-        <div>
+        <div className='signup-body'>
             <Nav />
             <Searchglass />
             <input name='IdInput' placeholder='이메일 또는 전화번호' onChange={onChangeId} value={user_id} />

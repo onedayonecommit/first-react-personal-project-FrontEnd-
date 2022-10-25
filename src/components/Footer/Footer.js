@@ -2,7 +2,7 @@ import React from 'react'
 import css from './Footer.css'
 const Footer = () => {
     return (
-        <div>
+        <div className='footer'>
             <div className='footer-box'>
                 <div className='footer-info'>회사명 : POOBIN_MOVIE</div>
                 <div className='footer-info'>통신판매업 : 미신고</div>

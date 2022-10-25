@@ -123,3 +123,17 @@
   border: 2px solid #e50914;
   color: #e50914;
 }
+.signup-body,
+.signup-body-final,
+.signup-body-second,
+.signup-body-first {
+  background-color: #f3f3f3;
+}
+
+body {
+  background: #141414;
+}
+
+.next-btn {
+  margin-bottom: 20px;
+}

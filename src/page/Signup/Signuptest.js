@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { SignupBefore } from '../../components'
 const Signuptest = () => {
     return (
-        <div>
+        <div className='signup-body-first'>
             <SignupBefore />
             <div className='flex'>
                 <span className='loggo-span w-full h-full mt-32'></span>

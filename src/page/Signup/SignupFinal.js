@@ -28,7 +28,7 @@ const SignupFinal = () => {
         imsee_ticket == 0 ? null : nav("/kakaoend")
     }, [next_url])
     return (
-        <div>
+        <div className='signup-body-final'>
             <SignupBefore />
             <div className='Signup-final-container'>
                 <span className='text-sm font-bold'>2/3단계</span>

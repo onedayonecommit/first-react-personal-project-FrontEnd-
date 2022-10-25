@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { Kakaopay, Login, Main, SignupFinal, SignupSecond, Signuptest, Kakaocancel, Kakaofail, SignupFinally, Kakaopayend } from "./page";
 import Footer from './components/Footer/Footer';
+import Mypage from "./page/Mypage/Mypage";
 
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
         <Route path="/kakaofail" element={<Kakaofail />}></Route>
         <Route path="/kakaocancel" element={<Kakaocancel />}></Route>
         <Route path="/kakaoend" element={<Kakaopayend />}></Route>
+        <Route path="/welcome/mypage" element={<Mypage />}></Route>
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </div >
   );
 }

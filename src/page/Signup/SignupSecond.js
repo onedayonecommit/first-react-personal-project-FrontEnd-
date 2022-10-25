@@ -22,7 +22,7 @@ const SignupSecond = () => {
         checkStatus == true ? nav("/welcome/signup/second") : null
     }, [checkStatus])
     return (
-        <div>
+        <div className='signup-body-second'>
             <SignupBefore />
             <div className='flex flex-col items-center '>
                 <div className='mt-16 w-96 font-semibold'>1/3단계</div>
