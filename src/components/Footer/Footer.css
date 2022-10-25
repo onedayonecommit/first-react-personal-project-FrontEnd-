@@ -1,0 +1,12 @@
+.footer-box {
+  color: white;
+  flex-direction: column;
+  margin: 30px 500px;
+  font-size: 14px;
+  /* border-top: 1px solid darkblue; */
+}
+
+.footer-info {
+  text-align: left;
+  margin-top: 3px;
+}
