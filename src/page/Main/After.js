@@ -52,7 +52,6 @@ const After = () => {
             <Link to="/"><button className='Watch-btn2'>상세 보기</button></Link>
             <img src={require("../../image/사이렌로고1.png")} className="siren-loggo" />
             <div className='info-div'>{movieinfo[0].movie_info}</div>
-
         </div>
     )
 }
