@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom'
-import { poobinlogo2 } from '../../image';
+import { mainlogo, poobinlogo2 } from '../../image';
 import { LoginFetch } from '../../redux/middlewares/Loginfetch';
 import { changePw, checking, defUserId } from '../../redux/reducer/MainidSlice';
 import css from './Login.css'
@@ -26,7 +26,7 @@ const Login = () => {
     console.log(user_id)
     return (
         <div className='Signupbody' >
-            <Link className="logo" to="/#"><img src={poobinlogo2} /></Link>
+            <Link className="logo" to="/#"><img src={mainlogo} /></Link>
             <div className="login">
                 <h1 className="login__title">로그인</h1>
                 <div className="login__group">

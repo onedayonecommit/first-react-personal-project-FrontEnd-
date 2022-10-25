@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import { poobinlogo2 } from '../../image';
+import { mainlogo, poobinlogo2 } from '../../image';
 import { MainIdCheckFetch } from '../../redux/middlewares/Mainidfetch';
 import { checking, defSignupMainEamil } from '../../redux/reducer/MainidSlice';
 const Before = () => {
@@ -38,7 +38,7 @@ const Before = () => {
             <div className='main_body'>
                 <main>
                     <div className="top-bar">
-                        <div className="logo"><img src={poobinlogo2} alt="netflix" /></div>
+                        <div className="logo"><img src={mainlogo} alt="netflix" /></div>
                         <div className="buttons">
                             <select name="Language" id="lang">
                                 <option value="portuguese">한국어</option>

@@ -19,8 +19,7 @@
   left: 10px;
 }
 .Signupbody .logo img {
-  height: 75px;
-  width: auto;
+  height: auto;
 }
 .Signupbody .login {
   display: flex;

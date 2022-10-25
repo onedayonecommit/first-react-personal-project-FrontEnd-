@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { poobinlogo2 } from '../../image'
+import { mainlogo, poobinlogo2 } from '../../image'
 const NavSide = () => {
     return (
         <div className='flex'><Link to='/'>
-            <img src={poobinlogo2} className="w-16 h-16" />
+            <img src={mainlogo} className="w-16 h-16" />
         </Link>
             <ul className='flex items-center ml-8'>
                 <li className='m-4 text-light font text-l'><Link to={'/hb/movie'}>영화</Link></li>
