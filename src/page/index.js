@@ -8,5 +8,9 @@ import Kakaopay from "./kakaowait/Kakaopay";
 import Kakaocancel from "./kakaowait/Kakaocancel";
 import Kakaofail from "./kakaowait/Kakaofail";
 import Kakaopayend from "./kakaowait/Kakaopayend";
+import Mainnav from "./Main/Mainnav";
+import Mainplayerbtn from "./Main/Mainplayerbtn";
+import Todaybest from "./Main/Todaybest";
+import Commingsoon from "./Main/Commingsoon";
 
-export { Login, Main, Signup, Signuptest, SignupSecond, SignupFinal, Kakaopay, Kakaocancel, Kakaofail, Kakaopayend }
+export { Login, Main, Signup, Signuptest, SignupSecond, SignupFinal, Kakaopay, Kakaocancel, Kakaofail, Kakaopayend, Mainnav, Mainplayerbtn, Todaybest, Commingsoon }

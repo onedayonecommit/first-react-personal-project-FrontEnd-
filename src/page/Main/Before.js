@@ -38,7 +38,7 @@ const Before = () => {
             <div className='main_body'>
                 <main>
                     <div className="top-bar">
-                        <div className="logo"><img src={mainlogo} alt="netflix" /></div>
+                        <Link to="/"><div className="logo"><img src={mainlogo} alt="netflix" /></div></Link>
                         <div className="buttons">
                             <select name="Language" id="lang">
                                 <option value="portuguese">한국어</option>

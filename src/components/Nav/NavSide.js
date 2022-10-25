@@ -4,7 +4,7 @@ import { mainlogo, poobinlogo2 } from '../../image'
 const NavSide = () => {
     return (
         <div className='flex'><Link to='/'>
-            <img src={mainlogo} className="w-16 h-16" />
+            <Link to="/"><img src={mainlogo} className="w-16 h-16" /></Link>
         </Link>
             <ul className='flex items-center ml-8'>
                 <li className='m-4 text-light font text-l'><Link to={'/hb/movie'}>영화</Link></li>

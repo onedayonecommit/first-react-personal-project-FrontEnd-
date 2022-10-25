@@ -5,5 +5,7 @@ import SignupBefore from "./Header/SignupBefore";
 import Motiondiv from "./Motiondiv/Motiondiv";
 import Searchbar from "./Searchglass/Searchbar";
 import MainRanddomeMovie from "./MoviePlayer/MainRanddomeMovie";
+import Footer from "./Footer/Footer";
 
-export { Searchglass, Nav, Side, SignupBefore, Motiondiv, Searchbar, MainRanddomeMovie }
+
+export { Searchglass, Nav, Side, SignupBefore, Motiondiv, Searchbar, MainRanddomeMovie, Footer }

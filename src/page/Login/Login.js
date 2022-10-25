@@ -26,7 +26,7 @@ const Login = () => {
     console.log(user_id)
     return (
         <div className='Signupbody' >
-            <Link className="logo" to="/#"><img src={mainlogo} /></Link>
+            <Link className="logo" to="/"><img src={mainlogo} /></Link>
             <div className="login">
                 <h1 className="login__title">로그인</h1>
                 <div className="login__group">

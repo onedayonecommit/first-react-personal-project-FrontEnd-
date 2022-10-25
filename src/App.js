@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { Kakaopay, Login, Main, SignupFinal, SignupSecond, Signuptest, Kakaocancel, Kakaofail, SignupFinally, Kakaopayend } from "./page";
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/kakaocancel" element={<Kakaocancel />}></Route>
         <Route path="/kakaoend" element={<Kakaopayend />}></Route>
       </Routes>
+      <Footer />
     </div >
   );
 }
