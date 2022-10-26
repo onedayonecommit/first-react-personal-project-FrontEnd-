@@ -1,11 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const EmailChangeSlice = createSlice({
-    name: "emailChanger",
+const PhonenumChangeSlice = createSlice({
+    name: "PhonenumChanger",
     initialState: {},
-    reducers: {
-        email: "email"
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder.addCase()
         builder.addCase()
@@ -13,4 +11,4 @@ const EmailChangeSlice = createSlice({
     }
 })
 
-export default EmailChangeSlice
+export default PhonenumChangeSlice

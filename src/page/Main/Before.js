@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { mainlogo, poobinlogo2 } from '../../image';
 import { MainIdCheckFetch } from '../../redux/middlewares/Mainidfetch';
-import { checking, defSignupMainEamil } from '../../redux/reducer/MainidSlice';
+import { checking, defSignupMainEmail } from '../../redux/reducer/MainidSlice';
 const Before = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -30,7 +30,7 @@ const Before = () => {
 
     const signup_main_email = useSelector(state => state.MainidCheck.signup_main_email)
     const onChangeEmail = (e) => {
-        dispatch(defSignupMainEamil(e.target.value))
+        dispatch(defSignupMainEmail(e.target.value))
     }
 
     return (

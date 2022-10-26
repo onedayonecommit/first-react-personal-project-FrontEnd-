@@ -17,7 +17,7 @@ const MainIdCheckSlice = createSlice({
         changePw: (state, action) => {
             state.user_pw = action.payload
         },
-        defSignupMainEamil: (state, action) => {
+        defSignupMainEmail: (state, action) => {
             state.signup_main_email = action.payload
         }
     },
@@ -38,4 +38,4 @@ const MainIdCheckSlice = createSlice({
 })
 
 export { MainIdCheckSlice }
-export const { checking, defSignupId, defUserId, changePw, defSignupMainEamil } = MainIdCheckSlice.actions
+export const { checking, defSignupId, defUserId, changePw, defSignupMainEmail } = MainIdCheckSlice.actions

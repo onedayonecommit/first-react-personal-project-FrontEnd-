@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { SignupBefore } from '../../components';
 import IdReCheckFetch from '../../redux/middlewares/IdRecheckfetch';
-import { defSignupMainEamil, defSignupId, changePw } from '../../redux/reducer/MainidSlice';
+import { defSignupMainEmail, defSignupId, changePw } from '../../redux/reducer/MainidSlice';
 import css from './Signup.css'
 const SignupSecond = () => {
     const nav = useNavigate();
@@ -11,7 +11,7 @@ const SignupSecond = () => {
     const signupPw = useSelector((state) => state.MainidCheck.user_pw);
     const dispatch = useDispatch();
     const onChangeId = (e) => {
-        dispatch(defSignupMainEamil(e.target.value))
+        dispatch(defSignupMainEmail(e.target.value))
     }
     const onChangePw = (e) => {
         dispatch(changePw(e.target.value))

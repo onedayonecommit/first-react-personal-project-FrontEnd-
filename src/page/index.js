@@ -12,5 +12,9 @@ import Mainnav from "./Main/Mainnav";
 import Mainplayerbtn from "./Main/Mainplayerbtn";
 import Todaybest from "./Main/Todaybest";
 import Commingsoon from "./Main/Commingsoon";
+import ChangeEmail from "./Mypage/MypageChange/ChangeEmail";
+import ChangeNick from "./Mypage/MypageChange/ChangeNick";
+import ChangePhonenum from "./Mypage/MypageChange/ChangePhonenum";
+import ChangePw from "./Mypage/MypageChange/ChangePw";
 
-export { Login, Main, Signup, Signuptest, SignupSecond, SignupFinal, Kakaopay, Kakaocancel, Kakaofail, Kakaopayend, Mainnav, Mainplayerbtn, Todaybest, Commingsoon }
+export { Login, Main, Signup, Signuptest, SignupSecond, SignupFinal, Kakaopay, Kakaocancel, Kakaofail, Kakaopayend, Mainnav, Mainplayerbtn, Todaybest, Commingsoon, ChangeEmail, ChangeNick, ChangePhonenum, ChangePw }
