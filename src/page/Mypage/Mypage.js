@@ -1,10 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
+import { getCookie, removeCookie } from '../../Cookies'
+import EnterMypageFetch from '../../redux/middlewares/Newmiddleware/EnterMypageFetch'
 import MypageNav from '../Main/MypageNav'
 import "./Mypage.css"
 
 const Mypage = () => {
     const nav = useNavigate();
+    const dispatch = useDispatch();
+    const logincookie = getCookie("MY AT")
+    useEffect(() => {
+        console.log(logincookie)
+        if (logincookie !== undefined) {
+            dispatch(EnterMypageFetch({ accesstoken: logincookie }))
+        }
+        else { nav("/welcome/login") }
+    }, [])
     return (
         <div className='mypage-box'>
             <MypageNav />
@@ -19,7 +31,9 @@ const Mypage = () => {
                     <div className='payment-box flex justify-between'>
                         <div className='payment-box-first'>
                             <div className='payment-box-first-1'><span>멤버십 & 결제 정보</span></div>
-                            <div className='payment-box-first-1'><button>멤버십 해지</button></div>
+                            <div className='payment-box-first-1'><button onClick={() => {
+                                nav("/welcome/mypage")
+                            }}>멤버십 해지</button></div>
                         </div>
                         <div className='payment-box-second'>
                             <div className='payment-box-second-1 flex justify-between'>
@@ -42,16 +56,16 @@ const Mypage = () => {
                                 <div>
                                     <ul className='link-ul'>
                                         <li className='Link-li'>
-                                            <Link className='payment-box-second-1-2'>계정 이메일 변경</Link>
+                                            <Link to="/welcome/changeemail" className='payment-box-second-1-2'>계정 이메일 변경</Link>
                                         </li>
                                         <li className='Link-li'>
-                                            <Link className='payment-box-second-1-2'>비밀번호 변경</Link>
+                                            <Link to="/welcome/changepw" className='payment-box-second-1-2'>비밀번호 변경</Link>
                                         </li>
                                         <li className='Link-li'>
-                                            <Link className='payment-box-second-1-2'>휴대폰 번호 변경</Link>
+                                            <Link to="/welcome/changephonenum" className='payment-box-second-1-2'>휴대폰 번호 변경</Link>
                                         </li>
                                         <li className='Link-li'>
-                                            <Link className='payment-box-second-1-2'>닉네임 변경</Link>
+                                            <Link to="/welcome/changenickname" className='payment-box-second-1-2'>닉네임 변경</Link>
                                         </li>
                                     </ul>
                                 </div>

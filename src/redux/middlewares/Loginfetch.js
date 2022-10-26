@@ -4,7 +4,6 @@ import { setCookie } from "../../Cookies";
 import { login } from "../reducer/LoginSlice";
 
 const LoginFetch = createAsyncThunk("LoginSlice/LoginFetch", async (state) => {
-    console.log(state)
     const LoginResult = await axios({
         method: "post",
         url: "http://localhost:8080/login",
@@ -17,16 +16,10 @@ const LoginFetch = createAsyncThunk("LoginSlice/LoginFetch", async (state) => {
     })
     if (LoginResult == "아이디/비밀번호 확인 바랍니다.") {
         alert(LoginResult)
-        return login({ status: false })
     }
     else {
         alert("환영합니다.")
-        setCookie("My AT", LoginResult, {
-            path: "/",
-            secure: true,
-            sameSite: "none"
-        })
-        return login({ id: state.loginIdInput, AT: LoginResult, status: true })
+        return LoginResult
     }
 })
 

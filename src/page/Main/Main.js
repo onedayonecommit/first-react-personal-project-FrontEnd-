@@ -6,16 +6,16 @@ import After from './After';
 import Before from './Before';
 import css from "./Main.css"
 const Main = () => {
-    const loging = useSelector(state => state.Login.loging)
+    const loging = window.localStorage.loginstatus
     useEffect((e) => {
 
     })
     return (
         <div>
-            {loging == false ?
-                <Before />
-                :
+            {loging == "true" ?
                 <After />
+                :
+                <Before />
             }
             {/* <Nav />
             <Searchglass />

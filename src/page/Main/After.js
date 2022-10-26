@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom'
 import { MainRanddomeMovie, Searchbar } from '../../components';
+import { getCookie } from '../../Cookies';
 import { mainlogo, paranposter, poobinlogo2, sirenposter, sirenstill1, sirenstill2, sirenstill3, whereposter } from '../../image';
 import GetMovieFetch from '../../redux/middlewares/Getmoviefetch';
 import { logout } from '../../redux/reducer/LoginSlice';
@@ -27,6 +28,8 @@ const After = () => {
     }, [])
     const movieinfo = useSelector(state => state.getMovie.movie)
     console.log(movieinfo)
+    console.log(getCookie("MY AT"))
+    console.log(window.localStorage.loginstatus)
 
     return (
         <div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import EmailChangeFetch from '../../../redux/middlewares/Newmiddleware/NewEmailChangeFetch';
+import "./Change.css"
 
 const ChangeEmail = () => {
     const dispatch = useDispatch();
@@ -13,8 +14,8 @@ const ChangeEmail = () => {
                 console.log(email)
             }} />
             <button onClick={() => {
-                // dispatch(EmailChangeFetch(email))
-            }}>변경</button>
+                dispatch(EmailChangeFetch(email))
+            }}><h1 className='change-text'>변경</h1></button>
         </div>
     )
 }

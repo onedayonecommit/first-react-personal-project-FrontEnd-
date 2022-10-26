@@ -1,6 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { changeStatus } from "../reducer/IdRecheckSlice";
 
 const IdReCheckFetch = createAsyncThunk("MainidSlice/IdReCheckFetch", async (state) => {
     const res = await axios({

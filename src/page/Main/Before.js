@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
+import { getCookie } from '../../Cookies';
 import { mainlogo, poobinlogo2 } from '../../image';
 import { MainIdCheckFetch } from '../../redux/middlewares/Mainidfetch';
 import { checking, defSignupMainEmail } from '../../redux/reducer/MainidSlice';
@@ -8,7 +9,8 @@ const Before = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const statusNumber = useSelector(state => state.MainidCheck.status)
-
+    console.log(getCookie("MY AT"))
+    console.log(window.localStorage.loginstatus)
     useEffect(() => {
         console.log(statusNumber)
         switch (statusNumber) {

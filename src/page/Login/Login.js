@@ -8,7 +8,7 @@ import css from './Login.css'
 const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const loging = useSelector(state => state.Login.loging)
+    const loging = window.localStorage.loginstatus
     const onChangeId = (e) => {
         dispatch(defUserId(e.target.value))
     }
@@ -19,7 +19,7 @@ const Login = () => {
     const user_pw = useSelector(state => state.MainidCheck.user_pw)
     useEffect(() => {
         console.log(loging)
-        if (loging == true) {
+        if (loging == "true") {
             navigate("/");
         }
     }, [loging]);
