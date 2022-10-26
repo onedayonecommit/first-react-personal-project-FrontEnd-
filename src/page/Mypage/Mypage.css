@@ -1,0 +1,136 @@
+.content-box {
+  width: 100%;
+  padding-top: 100px;
+}
+
+.content-wrap {
+  width: 1024px;
+  margin: 50px auto 100px auto;
+}
+
+.content {
+  color: white;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.content span {
+  font-weight: 400;
+  font-size: 35px;
+  color: white;
+  margin-right: 20px;
+}
+
+.member-img {
+  background: url(../../image/멤버쉽.svg) no-repeat 0 0;
+  height: 26px;
+  margin-right: 5px;
+  padding-right: 26px;
+  width: 26px;
+}
+
+.payment-box {
+  border-top: 1px solid #e50913;
+  color: rgba(240, 248, 255, 0.689);
+}
+
+.info-box {
+  border-top: 1px solid #e50913;
+  border-bottom: 1px solid #e50913;
+}
+
+.payment-box-first,
+.membership-info-box {
+  width: 260px;
+  height: 100%;
+}
+
+.payment-box-first span {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(240, 248, 255, 0.689);
+}
+
+.payment-box-first button {
+  background: ivory;
+  color: rgb(62, 62, 62);
+  padding: 0px 70px;
+  height: 40px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.payment-box-second {
+  width: 764px;
+}
+
+.payment-box-second-1,
+.payment-box-second-2,
+.payment-box-second-3 {
+  margin: 10px 0px;
+}
+
+.payment-box-second-2 {
+  border-top: 1px solid #e50913;
+  border-bottom: 1px solid #e50913;
+  padding: 10px 0px;
+}
+
+.Link-li,
+.payment-box-second-3-2 {
+  text-align: right;
+}
+
+.payment-box-first-1 {
+  margin-top: 15px;
+}
+
+.li-1 {
+  font-weight: bold;
+  color: white;
+}
+
+.payment-box-second-1-2,
+.payment-box-second-2-2,
+.payment-box-second-3-2 {
+  color: rgb(0, 8, 255);
+  font-weight: bold;
+}
+
+.membership-info-box {
+  padding: 15px 0px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.ul-li {
+  color: white;
+}
+
+.membership-info-box-1 {
+  width: 764px;
+  align-items: center;
+}
+
+.third-box {
+  padding-bottom: 25px;
+}
+
+.ul-li-lastchild {
+  color: rgb(0, 8, 255);
+  font-weight: bold;
+}
+
+.exit-btn {
+  background-color: ivory;
+  width: 800px;
+  height: 80px;
+  border-radius: 6px;
+}
+
+.exit-btn-box {
+  margin: 0px auto;
+  width: 800px;
+}
