@@ -1,0 +1,30 @@
+.change-text {
+  color: white;
+}
+.change-div {
+  width: 1000px;
+  margin: 30px auto;
+  background-color: red;
+  padding: 10px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.change-email-input {
+  width: 300px;
+  height: 35px;
+}
+
+.change-div button {
+  background-color: blue;
+  margin-left: 15px;
+  width: 100px;
+  text-align: center;
+  color: white;
+  height: 35px;
+  border-radius: 5px;
+}
+
+.pw-input {
+  margin-right: 15px;
+}

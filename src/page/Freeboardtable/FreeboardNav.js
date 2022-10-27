@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import { mainlogo } from '../../image';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../redux/reducer/LoginSlice';
-
-const Mainnav = () => {
+import './Freeboard.css'
+const FreeboardNav = () => {
     const dispatch = useDispatch();
     return (
         <div>
-            <div className='header-nav header-active flex items-center'>
+            <div className='header-active flex items-center'>
                 <div className='brand-loggo flex'>
                     <Link to="/"><img className='nav-loggo-img' src={mainlogo}></img></Link>
                 </div>
@@ -34,4 +34,4 @@ const Mainnav = () => {
     )
 }
 
-export default Mainnav
+export default FreeboardNav

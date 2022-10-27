@@ -14,6 +14,7 @@ import DeleteWriteSlice from "./DeleteWriteSlice";
 import UpdateWriteSlice from "./UpdateWriteSlice";
 import UpdateWriteFinalSlice from "./UpdateWriteFinalSlice";
 import UpdateWriteSeeSlice from "./UpdateWriteSeeSlice";
+import ChangeSlice from "./ChangeSlice";
 
 const rootReducer = combineReducers({
     Signup: SignupSlice.reducer,
@@ -31,7 +32,8 @@ const rootReducer = combineReducers({
     deleteWrite: DeleteWriteSlice.reducer,
     updateWrite: UpdateWriteSlice.reducer,
     updateWriteFinal: UpdateWriteFinalSlice.reducer,
-    updateWriteSee: UpdateWriteSeeSlice.reducer
+    updateWriteSee: UpdateWriteSeeSlice.reducer,
+    change: ChangeSlice.reducer
 });
 
 export default rootReducer;

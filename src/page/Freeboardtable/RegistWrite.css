@@ -1,0 +1,65 @@
+.regist-write-wrap {
+  width: 1200px;
+  margin: 30px auto;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.option-bar {
+  margin: 10px 30px;
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+}
+.title-input-div {
+  border: 1px solid white;
+  margin: 10px 30px;
+  border-radius: 5px;
+}
+
+.title-input {
+  height: 40px;
+  padding-left: 10px;
+  width: 1000px;
+  margin: 10px 0px;
+}
+
+.title-text-span {
+  color: white;
+  margin-right: 20px;
+  padding-left: 10px;
+}
+
+.content-textarea-div {
+  margin: 30px 30px;
+  border: 1px solid white;
+}
+
+.content-textarea {
+  margin: 10px;
+  width: 98%;
+  height: 500px;
+}
+
+textarea {
+  resize: none;
+}
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+.regist-btn1-div {
+  width: 1200px;
+  margin: 30px auto;
+}
+
+.regist-btn1,
+.exit-btn1 {
+  color: blue;
+  background-color: white;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  margin-left: 30px;
+}

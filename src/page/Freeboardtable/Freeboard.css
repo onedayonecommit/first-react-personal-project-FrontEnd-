@@ -1,0 +1,79 @@
+.freeboard-table-wrap {
+  width: 1200px;
+  margin: 0px auto;
+}
+
+.board-name-div {
+  color: white;
+  font-size: 40px;
+  margin-top: 70px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.freeboard-table {
+  margin-top: 60px;
+  width: 1200px;
+  border: 1px solid white;
+}
+
+.th-head {
+  color: white;
+  text-align: center;
+}
+
+.freeboard-tr {
+  display: flex;
+  padding: 15px 0px;
+}
+
+.bno-th-td {
+  width: 100px;
+  border-right: 1px solid white;
+}
+
+.title-th-td {
+  width: 500px;
+  border-right: 1px solid white;
+}
+
+.writer-th-td {
+  width: 300px;
+  border-right: 1px solid white;
+}
+
+.view-th-td {
+  width: 100px;
+  border-right: 1px solid white;
+}
+
+.registdate-th-td {
+  width: 200px;
+}
+
+.regist-write-btn {
+  color: blue;
+  background-color: white;
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.regist-write-btn-div {
+  display: flex;
+  justify-content: flex-end;
+  width: 1200px;
+  margin: 0px auto;
+}
+
+.header-nav {
+  width: 100vw;
+  z-index: 1000;
+}
+
+.child-div {
+  width: 1200px;
+  margin: 0px auto;
+}
