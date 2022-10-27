@@ -3,19 +3,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom'
 import { mainlogo, poobinlogo2 } from '../../image';
 import { LoginFetch } from '../../redux/middlewares/Loginfetch';
-import { changePw, checking, defUserId } from '../../redux/reducer/MainidSlice';
+import { changePw, checking, defSignupId, defSignupMainEmail, defUserId } from '../../redux/reducer/MainidSlice';
 import css from './Login.css'
 const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const loging = window.localStorage.loginstatus
     const onChangeId = (e) => {
-        dispatch(defUserId(e.target.value))
+        dispatch(defSignupMainEmail(e.target.value))
     }
     const onChangePw = (e) => {
         dispatch(changePw(e.target.value))
     }
-    const user_id = useSelector(state => state.MainidCheck.login_user_email)
+    const user_id = useSelector(state => state.MainidCheck.signup_main_email)
     const user_pw = useSelector(state => state.MainidCheck.user_pw)
     useEffect(() => {
         console.log(loging)

@@ -21,15 +21,10 @@ const After = () => {
     const dispatch = useDispatch();
     const getmoviefunc = () => {
         dispatch(GetMovieFetch())
-        console.log("6")
     }
     useEffect(() => {
         getmoviefunc()
     }, [])
-    const movieinfo = useSelector(state => state.getMovie.movie)
-    console.log(movieinfo)
-    console.log(getCookie("MY AT"))
-    console.log(window.localStorage.loginstatus)
 
     return (
         <div>

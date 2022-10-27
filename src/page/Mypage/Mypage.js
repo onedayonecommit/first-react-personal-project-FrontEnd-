@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { getCookie, removeCookie } from '../../Cookies'
-import EnterMypageFetch from '../../redux/middlewares/Newmiddleware/EnterMypageFetch'
+import EnterMypageFetch from '../../redux/middlewares/EnterMypageFetch'
 import MypageNav from '../Main/MypageNav'
 import "./Mypage.css"
 
@@ -10,13 +10,40 @@ const Mypage = () => {
     const nav = useNavigate();
     const dispatch = useDispatch();
     const logincookie = getCookie("MY AT")
-    useEffect(() => {
-        console.log(logincookie)
-        if (logincookie !== undefined) {
-            dispatch(EnterMypageFetch({ accesstoken: logincookie }))
+
+    if (logincookie !== "undefined") {
+        dispatch(EnterMypageFetch({ accesstoken: logincookie }))
+    }
+    else {
+        console.log("hi")
+        nav("/goodbye/logout")
+    }
+    const user_email = useSelector(state => state.enterMypage.user_email)
+    const user_phone = useSelector(state => state.enterMypage.user_phone)
+    const user_nickname = useSelector(state => state.enterMypage.user_nickname)
+    const user_ticket = useSelector(state => state.enterMypage.user_ticket)
+
+    const ticketcheck = () => {
+        switch (user_ticket) {
+            case 0:
+                return "이용권 구매 바랍니다."
+            case 1:
+                return "독신"
+            case 2:
+                return "커플"
+            case 3:
+                return "패밀리"
+            default:
+                return "error"
         }
-        else { nav("/welcome/login") }
-    }, [])
+    }
+
+    const phonenull = () => {
+        return user_phone == "" ? "휴대폰 번호 등록 요망" : user_phone
+    }
+    const nicknamenull = () => {
+        return user_nickname == "" ? "닉네임 등록 요망" : user_nickname
+    }
     return (
         <div className='mypage-box'>
             <MypageNav />
@@ -40,16 +67,16 @@ const Mypage = () => {
                                 <div>
                                     <ul>
                                         <li className='payment-box-second-1-1 li-1'>
-                                            id@naver.com
+                                            {user_email}
                                         </li>
                                         <li className='payment-box-second-1-1 li-2'>
                                             비밀번호: *@!#*@!#
                                         </li>
                                         <li className='payment-box-second-1-1 li-3'>
-                                            전화번호 : 010-0000-0000
+                                            전화번호 : {phonenull()}
                                         </li>
                                         <li className='payment-box-second-1-1 li-4'>
-                                            닉네임 : ""
+                                            닉네임 : {nicknamenull()}
                                         </li>
                                     </ul>
                                 </div>
@@ -109,7 +136,7 @@ const Mypage = () => {
                         <div className='flex justify-between membership-info-box-1'>
                             <div>
                                 <ul>
-                                    <li className='ul-li'>독신</li>
+                                    <li className='ul-li'>{ticketcheck()}</li>
                                 </ul>
                             </div>
                             <div>

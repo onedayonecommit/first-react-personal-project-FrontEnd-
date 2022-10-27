@@ -6,6 +6,10 @@ import { PriceSlice } from "./PriceSlice";
 import { BuyOptionSlice } from "./BuyoptionSlice";
 import IdRecheckSlice from "./IdRecheckSlice";
 import GetmovieSlice from "./GetmovieSlice";
+import RegistWriteSlice from "./RegistWriteSlice";
+import WriteAllSlice from "./WriteAllSlice";
+import EnterMypageSlice from "./EnterMypageSlice";
+import WriteOneSlice from "./WriteOneSlice";
 
 const rootReducer = combineReducers({
     Signup: SignupSlice.reducer,
@@ -15,7 +19,11 @@ const rootReducer = combineReducers({
     Price: PriceSlice.reducer,
     BuyOption: BuyOptionSlice.reducer,
     idRecheck: IdRecheckSlice.reducer,
-    getMovie: GetmovieSlice.reducer
+    getMovie: GetmovieSlice.reducer,
+    registWrite: RegistWriteSlice.reducer,
+    writeAll: WriteAllSlice.reducer,
+    enterMypage: EnterMypageSlice.reducer,
+    writeOne: WriteOneSlice.reducer
 });
 
 export default rootReducer;

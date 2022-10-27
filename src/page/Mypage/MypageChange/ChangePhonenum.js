@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import PhonenumChangeFetch from '../../../redux/middlewares/Newmiddleware/NewPhonenumChangeFetch';
+import PhonenumChangeFetch from '../../../redux/middlewares/NewPhonenumChangeFetch';
 
 const ChangePhonenum = () => {
     const [phonenum, setPhonenum] = useState();

@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router-dom";
-import { Kakaopay, Login, Main, SignupFinal, SignupSecond, Signuptest, Kakaocancel, Kakaofail, SignupFinally, Kakaopayend, ChangeEmail, ChangePw, ChangePhonenum, ChangeNick } from "./page";
-import Footer from './components/Footer/Footer';
+import { Kakaopay, Login, Main, SignupFinal, SignupSecond, Signuptest, Kakaocancel, Kakaofail, SignupFinally, Kakaopayend, ChangeEmail, ChangePw, ChangePhonenum, ChangeNick, Sirenboard, Whereboard, Paranboard, Registwrite, Writecontent } from "./page";
 import Mypage from "./page/Mypage/Mypage";
+import Freeboard from "./page/Freeboardtable/Freeboard";
+import Logout from "./Logout";
 
 function App() {
   return (
@@ -21,8 +22,14 @@ function App() {
         <Route path="/welcome/changepw" element={<ChangePw />}></Route>
         <Route path="/welcome/changephonenum" element={<ChangePhonenum />}></Route>
         <Route path="/welcome/changenickname" element={<ChangeNick />}></Route>
+        <Route path="/welcome/Freeboard" element={<Freeboard />}></Route>
+        <Route path="/welcome/Sirenboard" element={<Sirenboard />}></Route>
+        <Route path="/welcome/Whereboard" element={<Whereboard />}></Route>
+        <Route path="/welcome/Paranboard" element={<Paranboard />}></Route>
+        <Route path="/welcome/Registwrite" element={<Registwrite />}></Route>
+        <Route path="/welcome/freeboard/:id" element={<Writecontent />}></Route>
+        <Route path="/goodbye/logout" element={<Logout />}></Route>
       </Routes>
-      {/* <Footer /> */}
     </div >
   );
 }

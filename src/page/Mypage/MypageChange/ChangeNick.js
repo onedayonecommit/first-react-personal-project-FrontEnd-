@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import NicknameChangeFetch from '../../../redux/middlewares/Newmiddleware/NewNicknameChangeFetch';
+import NicknameChangeFetch from '../../../redux/middlewares/NewNicknameChangeFetch';
 
 const ChangeNick = () => {
     const dispatch = useDispatch();

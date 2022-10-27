@@ -24,7 +24,7 @@ const LoginSlice = createSlice({
         logout: (state) => {
             console.log("Hi")
             window.localStorage.setItem("loginstatus", false)
-            window.location.href = "/"
+            window.location.href = "/goodbye/logout"
         }
     },
     extraReducers: (builder) => {

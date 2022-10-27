@@ -17,7 +17,7 @@ const Mainnav = () => {
                     <div>
                         <Link className='nav-child'>가장 핫한 작품</Link>
                         <Link className='nav-child'>영화</Link>
-                        <Link className='nav-child'>토론의 마당</Link>
+                        <Link to='/welcome/Freeboard' className='nav-child'>토론의 마당</Link>
                         <Link className='nav-child'>고객센터</Link></div>
                     <div>
                         <Searchbar />

@@ -16,5 +16,11 @@ import ChangeEmail from "./Mypage/MypageChange/ChangeEmail";
 import ChangeNick from "./Mypage/MypageChange/ChangeNick";
 import ChangePhonenum from "./Mypage/MypageChange/ChangePhonenum";
 import ChangePw from "./Mypage/MypageChange/ChangePw";
+import Freeboard from "./Freeboardtable/Freeboard";
+import Sirenboard from "./Freeboardtable/Sirenboard";
+import Paranboard from "./Freeboardtable/Paranboard";
+import Whereboard from "./Freeboardtable/Whereboard";
+import Registwrite from "./Freeboardtable/Registwrite";
+import Writecontent from "./Freeboardtable/Writecontent";
 
-export { Login, Main, Signup, Signuptest, SignupSecond, SignupFinal, Kakaopay, Kakaocancel, Kakaofail, Kakaopayend, Mainnav, Mainplayerbtn, Todaybest, Commingsoon, ChangeEmail, ChangeNick, ChangePhonenum, ChangePw }
+export { Login, Main, Signup, Signuptest, SignupSecond, SignupFinal, Kakaopay, Kakaocancel, Kakaofail, Kakaopayend, Mainnav, Mainplayerbtn, Todaybest, Commingsoon, ChangeEmail, ChangeNick, ChangePhonenum, ChangePw, Sirenboard, Paranboard, Whereboard, Freeboard, Registwrite, Writecontent }

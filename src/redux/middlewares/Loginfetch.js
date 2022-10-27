@@ -19,6 +19,7 @@ const LoginFetch = createAsyncThunk("LoginSlice/LoginFetch", async (state) => {
     }
     else {
         alert("환영합니다.")
+        console.log(LoginResult)
         return LoginResult
     }
 })

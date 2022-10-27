@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import ChangePwFetch from '../../../redux/middlewares/Newmiddleware/NewPwChangeFetch';
+import ChangePwFetch from '../../../redux/middlewares/NewPwChangeFetch';
 
 const ChangePw = () => {
     const dispatch = useDispatch();
