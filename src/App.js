@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Kakaopay, Login, Main, SignupFinal, SignupSecond, Signuptest, Kakaocancel, Kakaofail, SignupFinally, Kakaopayend, ChangeEmail, ChangePw, ChangePhonenum, ChangeNick, Sirenboard, Whereboard, Paranboard, Registwrite, Writecontent } from "./page";
+import { Kakaopay, Login, Main, SignupFinal, SignupSecond, Signuptest, Kakaocancel, Kakaofail, SignupFinally, Kakaopayend, ChangeEmail, ChangePw, ChangePhonenum, ChangeNick, Sirenboard, Whereboard, Paranboard, Registwrite, Writecontent, Updatewrite } from "./page";
 import Mypage from "./page/Mypage/Mypage";
 import Freeboard from "./page/Freeboardtable/Freeboard";
 import Logout from "./Logout";
@@ -28,6 +28,7 @@ function App() {
         <Route path="/welcome/Paranboard" element={<Paranboard />}></Route>
         <Route path="/welcome/Registwrite" element={<Registwrite />}></Route>
         <Route path="/welcome/freeboard/:id" element={<Writecontent />}></Route>
+        <Route path="/welcome/freeboard/update/:id" element={<Updatewrite />}></Route>
         <Route path="/goodbye/logout" element={<Logout />}></Route>
       </Routes>
     </div >

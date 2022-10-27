@@ -22,5 +22,6 @@ import Paranboard from "./Freeboardtable/Paranboard";
 import Whereboard from "./Freeboardtable/Whereboard";
 import Registwrite from "./Freeboardtable/Registwrite";
 import Writecontent from "./Freeboardtable/Writecontent";
+import Updatewrite from "./Freeboardtable/Updatewrite";
 
-export { Login, Main, Signup, Signuptest, SignupSecond, SignupFinal, Kakaopay, Kakaocancel, Kakaofail, Kakaopayend, Mainnav, Mainplayerbtn, Todaybest, Commingsoon, ChangeEmail, ChangeNick, ChangePhonenum, ChangePw, Sirenboard, Paranboard, Whereboard, Freeboard, Registwrite, Writecontent }
+export { Login, Main, Signup, Signuptest, SignupSecond, SignupFinal, Kakaopay, Kakaocancel, Kakaofail, Kakaopayend, Mainnav, Mainplayerbtn, Todaybest, Commingsoon, ChangeEmail, ChangeNick, ChangePhonenum, ChangePw, Sirenboard, Paranboard, Whereboard, Freeboard, Registwrite, Writecontent, Updatewrite }

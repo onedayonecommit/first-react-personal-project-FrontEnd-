@@ -10,6 +10,10 @@ import RegistWriteSlice from "./RegistWriteSlice";
 import WriteAllSlice from "./WriteAllSlice";
 import EnterMypageSlice from "./EnterMypageSlice";
 import WriteOneSlice from "./WriteOneSlice";
+import DeleteWriteSlice from "./DeleteWriteSlice";
+import UpdateWriteSlice from "./UpdateWriteSlice";
+import UpdateWriteFinalSlice from "./UpdateWriteFinalSlice";
+import UpdateWriteSeeSlice from "./UpdateWriteSeeSlice";
 
 const rootReducer = combineReducers({
     Signup: SignupSlice.reducer,
@@ -23,7 +27,11 @@ const rootReducer = combineReducers({
     registWrite: RegistWriteSlice.reducer,
     writeAll: WriteAllSlice.reducer,
     enterMypage: EnterMypageSlice.reducer,
-    writeOne: WriteOneSlice.reducer
+    writeOne: WriteOneSlice.reducer,
+    deleteWrite: DeleteWriteSlice.reducer,
+    updateWrite: UpdateWriteSlice.reducer,
+    updateWriteFinal: UpdateWriteFinalSlice.reducer,
+    updateWriteSee: UpdateWriteSeeSlice.reducer
 });
 
 export default rootReducer;
