@@ -13,8 +13,8 @@ const ChangeSlice = createSlice({
             console.log(action.payload)
             switch (action.payload.change_email_status) {
                 case true:
-                    alert("변경이 완료되었습니다.")
-                    return window.location.href = "/welcome/mypage"
+                    alert("변경이 완료되었습니다. 재 로그인 바랍니다.")
+                    return window.location.href = "/goodbye/logout"
                 case false:
                     alert("에러 발생 재 로그인 후 재 변경 시도 바랍니다.")
                     return window.location.href = "/goodbye/logout"
@@ -33,8 +33,8 @@ const ChangeSlice = createSlice({
         builder.addCase(NicknameChangeFetch.fulfilled, (state, action) => {
             switch (action.payload.change_nickname_status) {
                 case true:
-                    alert("변경이 완료되었습니다.")
-                    return window.location.href = "/welcome/mypage"
+                    alert("변경이 완료되었습니다. 재 로그인 바랍니다.")
+                    return window.location.href = "/goodbye/logout"
                 case false:
                     alert("에러 발생 재 로그인 후 재 변경 시도 바랍니다.")
                     return window.location.href = "/goodbye/logout"
@@ -51,8 +51,8 @@ const ChangeSlice = createSlice({
         builder.addCase(PhonenumChangeFetch.fulfilled, (state, action) => {
             switch (action.payload.change_phonenum_status) {
                 case true:
-                    alert("변경이 완료되었습니다.")
-                    return window.location.href = "/welcome/mypage"
+                    alert("변경이 완료되었습니다. 재 로그인 바랍니다.")
+                    return window.location.href = "/goodbye/logout"
                 case false:
                     alert("에러 발생 재 로그인 후 재 변경 시도 바랍니다.")
                     return window.location.href = "/goodbye/logout"
@@ -71,8 +71,8 @@ const ChangeSlice = createSlice({
         builder.addCase(ChangePwFetch.fulfilled, (state, action) => {
             switch (action.payload.change_pw_status) {
                 case true:
-                    alert("변경이 완료되었습니다.")
-                    return window.location.href = "/welcome/mypage"
+                    alert("변경이 완료되었습니다. 재 로그인 바랍니다.")
+                    return window.location.href = "/goodbye/logout"
                 case false:
                     alert("에러 발생 재 로그인 후 재 변경 시도 바랍니다.")
                     return window.location.href = "/goodbye/logout"
