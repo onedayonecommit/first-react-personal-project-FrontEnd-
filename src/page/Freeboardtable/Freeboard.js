@@ -3,7 +3,6 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import WriteAllFetch from '../../redux/middlewares/WriteAllFetch'
-import Mainnav from '../Main/Mainnav'
 import "./Freeboard.css"
 import FreeboardHeader from './FreeboardHeader'
 import FreeboardNav from './FreeboardNav'
