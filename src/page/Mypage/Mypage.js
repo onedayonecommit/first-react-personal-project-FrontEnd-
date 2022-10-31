@@ -1,49 +1,10 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
-import { getCookie, removeCookie } from '../../Cookies'
-import EnterMypageFetch from '../../redux/middlewares/EnterMypageFetch'
+import React from 'react'
+
+import { Link } from 'react-router-dom'
 import MypageNav from '../Main/MypageNav'
 import "./Mypage.css"
 
 const Mypage = () => {
-    const nav = useNavigate();
-    const dispatch = useDispatch();
-    const logincookie = getCookie("MY AT")
-
-    if (logincookie !== "undefined") {
-        dispatch(EnterMypageFetch({ accesstoken: logincookie }))
-    }
-    else {
-        console.log("hi")
-        nav("/goodbye/logout")
-    }
-    const user_email = useSelector(state => state.enterMypage.user_email)
-    const user_phone = useSelector(state => state.enterMypage.user_phone)
-    const user_nickname = useSelector(state => state.enterMypage.user_nickname)
-    const user_ticket = useSelector(state => state.enterMypage.user_ticket)
-
-    const ticketcheck = () => {
-        switch (user_ticket) {
-            case 0:
-                return "이용권 구매 바랍니다."
-            case 1:
-                return "독신"
-            case 2:
-                return "커플"
-            case 3:
-                return "패밀리"
-            default:
-                return "error"
-        }
-    }
-
-    const phonenull = () => {
-        return user_phone == "" ? "휴대폰 번호 등록 요망" : user_phone
-    }
-    const nicknamenull = () => {
-        return user_nickname == "" ? "닉네임 등록 요망" : user_nickname
-    }
     return (
         <div className='mypage-box'>
             <MypageNav />
@@ -59,7 +20,6 @@ const Mypage = () => {
                         <div className='payment-box-first'>
                             <div className='payment-box-first-1'><span>멤버십 & 결제 정보</span></div>
                             <div className='payment-box-first-1'><button onClick={() => {
-                                nav("/welcome/mypage")
                             }}>멤버십 해지</button></div>
                         </div>
                         <div className='payment-box-second'>
@@ -67,16 +27,16 @@ const Mypage = () => {
                                 <div>
                                     <ul>
                                         <li className='payment-box-second-1-1 li-1'>
-                                            {user_email}
+
                                         </li>
                                         <li className='payment-box-second-1-1 li-2'>
                                             비밀번호: *@!#*@!#
                                         </li>
                                         <li className='payment-box-second-1-1 li-3'>
-                                            전화번호 : {phonenull()}
+                                            전화번호 :
                                         </li>
                                         <li className='payment-box-second-1-1 li-4'>
-                                            닉네임 : {nicknamenull()}
+                                            닉네임 :
                                         </li>
                                     </ul>
                                 </div>
@@ -136,7 +96,7 @@ const Mypage = () => {
                         <div className='flex justify-between membership-info-box-1'>
                             <div>
                                 <ul>
-                                    <li className='ul-li'>{ticketcheck()}</li>
+                                    <li className='ul-li'></li>
                                 </ul>
                             </div>
                             <div>
@@ -149,7 +109,6 @@ const Mypage = () => {
                 </div >
             </div >
             <div className='exit-btn-box'><button className='exit-btn' onClick={() => {
-                nav("/")
             }}>나가기</button></div>
         </div >
     )

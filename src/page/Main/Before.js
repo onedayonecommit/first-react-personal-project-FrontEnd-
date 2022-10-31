@@ -1,46 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
-import { getCookie } from '../../Cookies';
-import { mainlogo, poobinlogo2 } from '../../image';
-import { MainIdCheckFetch } from '../../redux/middlewares/Mainidfetch';
-import { checking, defSignupMainEmail } from '../../redux/reducer/MainidSlice';
+import React from 'react'
+
+import { Link } from 'react-router-dom'
 const Before = () => {
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const statusNumber = useSelector(state => state.MainidCheck.status)
-    console.log(getCookie("MY AT"))
-    console.log(window.localStorage.loginstatus)
-    useEffect(() => {
-        console.log(statusNumber)
-        switch (statusNumber) {
-            case 0:
-                navigate("/")
-                break;
-            case 1:
-                navigate("/welcome/login")
-                dispatch(checking({ statusNumber: 0 }))
-                break;
-            case 2:
-                navigate("/welcome/signup")
-                dispatch(checking({ statusNumber: 0 }))
-                break;
-            default:
-                break;
-        }
-    }, [statusNumber])
-
-    const signup_main_email = useSelector(state => state.MainidCheck.signup_main_email)
-    const onChangeEmail = (e) => {
-        dispatch(defSignupMainEmail(e.target.value))
-    }
-
     return (
         <div>
             <div className='main_body'>
                 <main>
                     <div className="top-bar">
-                        <Link to="/"><div className="logo"><img src={mainlogo} alt="netflix" /></div></Link>
+                        <Link to="/"><div className="logo"><img alt="netflix" /></div></Link>
                         <div className="buttons">
                             <select name="Language" id="lang">
                                 <option value="portuguese">한국어</option>
@@ -56,10 +23,9 @@ const Before = () => {
                         <h3>그럼 감상 가능합니다.
                         </h3>
                         <label>
-                            <input type="email" placeholder="Email" className='text-gray-900' name='MainEmail' onChange={onChangeEmail} />
+                            <input type="email" placeholder="Email" className='text-gray-900' name='MainEmail' />
                             {/* <input type="button" value="시작하기" /> */}
                             <button className='start-btn' onClick={() => {
-                                dispatch(MainIdCheckFetch({ user_email: signup_main_email }))
                             }}>시작하기</button>
                         </label>
                     </div>

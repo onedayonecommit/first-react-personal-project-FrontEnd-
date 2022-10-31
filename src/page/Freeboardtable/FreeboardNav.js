@@ -2,11 +2,9 @@ import React from 'react'
 import { Searchbar } from '../../components'
 import { Link } from 'react-router-dom';
 import { mainlogo } from '../../image';
-import { useDispatch } from 'react-redux';
-import { logout } from '../../redux/reducer/LoginSlice';
 import './Freeboard.css'
 const FreeboardNav = () => {
-    const dispatch = useDispatch();
+
     return (
         <div>
             <div className='header-active flex items-center'>
@@ -25,7 +23,6 @@ const FreeboardNav = () => {
                     <div className='flex justify-between items-center'>
                         <div><Link to="/welcome/mypage" className='nav-child mr-4'>마이페이지</Link></div>
                         <div><button className='logout-btn mr-20' onClick={() => {
-                            dispatch(logout())
                         }}>LOG-OUT</button></div>
                     </div>
                 </div>

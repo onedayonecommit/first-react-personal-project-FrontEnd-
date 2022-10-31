@@ -1,7 +1,7 @@
 import { Cookies } from "react-cookie";
 
 const cookies = new Cookies()
-const expires = new Date();
+const expires = new Date
 expires.setMinutes(expires.getMinutes + 30)
 
 export const setCookie = (name, value, option) => {

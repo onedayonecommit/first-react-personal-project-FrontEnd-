@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 const Kakaopayend = () => {
-    useEffect(() => {
+    (() => {
         window.close()
     }, [])
     return (

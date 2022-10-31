@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { useSelector } from 'react-redux';
+import React from 'react'
+
 import { Link } from 'react-router-dom';
 import { Nav, Searchglass } from '../../components';
 import After from './After';
@@ -7,9 +7,9 @@ import Before from './Before';
 import css from "./Main.css"
 const Main = () => {
     const loging = window.localStorage.loginstatus
-    useEffect((e) => {
+        ((e) => {
 
-    })
+        })
     return (
         <div>
             {loging == "true" ?
