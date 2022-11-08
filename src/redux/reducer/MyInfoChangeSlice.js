@@ -49,3 +49,5 @@ const MyInfoChangeSlice = createSlice({
         })
     }
 })
+
+export { MyInfoChangeSlice }
